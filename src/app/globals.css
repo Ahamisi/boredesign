@@ -1,0 +1,60 @@
+@import url('https://fonts.cdnfonts.com/css/gilroy-bold');
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary-blue-100: #0097CE;
+  --primary-blue-200: #075299;
+  --primary-blue-300: #054387;
+  --primary-blue-400: #053B6E;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Gilroy-Regular', 'Gilroy', sans-serif;
+}
+
+/* Custom Classes */
+.text-primary-blue-100 {
+  color: var(--primary-blue-100);
+}
+
+.text-primary-blue-200 {
+  color: var(--primary-blue-200);
+}
+
+.text-primary-blue-300 {
+  color: var(--primary-blue-300);
+}
+
+.bg-primary-blue-100 {
+  background-color: var(--primary-blue-100);
+}
+
+.bg-primary-blue-200 {
+  background-color: var(--primary-blue-200);
+}
+
+.bg-primary-blue-300 {
+  background-color: var(--primary-blue-300);
+}
+
+.bg-primary-blue-400 {
+  background-color: var(--primary-blue-400);
+}
