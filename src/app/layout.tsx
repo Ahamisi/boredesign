@@ -49,6 +49,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={gilroy.variable}>
+      <head>
+        <title>BO Properties</title>
+        <meta name="description" content="Learn about BO Properties, a leading real estate company in Nigeria, delivering premium accommodation and investment opportunities." />
+        <meta property="og:title" content="About Us | BO Properties" />
+        <meta property="og:description" content="Learn about BO Properties, a leading real estate company in Nigeria, delivering premium accommodation and investment opportunities." />
+        <meta property="og:image" content="/logo-bo-properties.svg" />
+        <meta property="og:type" content="website" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "BO Properties",
+            "url": "https://boproperties.ng",
+            "logo": "https://boproperties.ng/logo-bo-properties.svg",
+            "description": "Premium real estate company in Nigeria.",
+          })
+        }} />
+      </head>
       <body
         className={` ${gilroy.variable} antialiased`}
       >
