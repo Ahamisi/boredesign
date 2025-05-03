@@ -19,6 +19,12 @@ export const postType = defineType({
       },
     }),
     defineField({
+      name: 'excerpt',
+      title: 'Excerpt',
+      description: 'A short summary of the post',
+      type: 'text',
+    }),
+    defineField({
       name: 'author',
       type: 'reference',
       to: {type: 'author'},
@@ -45,6 +51,12 @@ export const postType = defineType({
     defineField({
       name: 'publishedAt',
       type: 'datetime',
+    }),
+    defineField({
+      name: 'readTime',
+      title: 'Read Time (minutes)',
+      type: 'number',
+      initialValue: 3,
     }),
     defineField({
       name: 'body',

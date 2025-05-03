@@ -1,38 +1,45 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { client } from '@/sanity/lib/client';
+import { groq } from 'next-sanity';
 
 interface BlogPost {
-  id: string;
+  _id: string;
   slug: string;
   title: string;
-  coverImage: string;
+  mainImage: string;
 }
 
 const LatestNewsSection: React.FC = () => {
-  // Sample blog posts data
-  const blogPosts: BlogPost[] = [
-    {
-      id: '1',
-      slug: 'why-real-estate-will-lead-the-nigerian-economy',
-      title: 'Why Real Estate Will Lead The Nigerian Economy As The Largest Sector',
-      coverImage: '/blog/real-estate-leading.jpg',
-    },
-    {
-      id: '2',
-      slug: 'smart-way-to-build-wealth-real-estate-investment',
-      title: 'The Smart Way to Build Wealth: Real Estate Investment Simplified',
-      coverImage: '/blog/smartway-to-build-wealth.jpg',
-    },
-    {
-      id: '3',
-      slug: 'why-real-estate-will-lead-the-nigerian-economy-2',
-      title: 'Why Real Estate Will Lead The Nigerian Economy As The Largest Sector',
-      coverImage: '/blog/why-real-estate-will-lead-nigerian-economy.jpg',
-    }
-  ];
+  const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const query = groq`
+        *[_type == "post" && defined(slug.current)] | order(publishedAt desc)[0...3] {
+          _id,
+          title,
+          "slug": slug.current,
+          "mainImage": mainImage.asset->url
+        }
+      `;
+      
+      try {
+        const posts = await client.fetch(query);
+        setBlogPosts(posts);
+      } catch (error) {
+        console.error("Error fetching blog posts:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchPosts();
+  }, []);
 
   return (
     <section className="py-16 md:py-24 bg-white">
@@ -55,23 +62,31 @@ const LatestNewsSection: React.FC = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {blogPosts.map((post) => (
-            <article key={post.id} className="flex flex-col h-full">
-              <Link href={`/blog/${post.slug}`} className="block relative aspect-[4/3] w-full rounded-lg overflow-hidden mb-4">
-                <Image 
-                  src={post.coverImage} 
-                  alt={post.title} 
-                  fill 
-                  className="object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </Link>
-              <Link href={`/blog/${post.slug}`} className="block group">
-                <h3 className="text-lg font-bold text-gray-800 group-hover:text-primary-blue-300 transition-colors duration-300">
-                  {post.title}
-                </h3>
-              </Link>
-            </article>
-          ))}
+          {isLoading ? (
+            Array(3).fill(0).map((_, i) => (
+              <div key={i} className="h-72 bg-gray-100 rounded-lg animate-pulse"></div>
+            ))
+          ) : blogPosts.length > 0 ? (
+            blogPosts.map((post) => (
+              <article key={post._id} className="flex flex-col h-full">
+                <Link href={`/blog/${post.slug}`} className="block relative aspect-[4/3] w-full rounded-lg overflow-hidden mb-4">
+                  <Image 
+                    src={post.mainImage || '/placeholder-image.jpg'} 
+                    alt={post.title} 
+                    fill 
+                    className="object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </Link>
+                <Link href={`/blog/${post.slug}`} className="block group">
+                  <h3 className="text-lg font-bold text-gray-800 group-hover:text-primary-blue-300 transition-colors duration-300">
+                    {post.title}
+                  </h3>
+                </Link>
+              </article>
+            ))
+          ) : (
+            <p className="col-span-3 text-center text-gray-500">No blog posts found.</p>
+          )}
         </div>
       </div>
     </section>

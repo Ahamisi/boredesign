@@ -16,29 +16,29 @@ export default function Home() {
       id: 1,
       backgroundImage: "/bo-slider.jpg", // Replace with your actual image
       subtitle: "WELCOME TO BO PROPERTIES",
-      title1: "REAL ESTATE",
-      title2: "CONSULTANCY",
-      description: "BO Properties offers expert guidance on property investment, strategic buying, and maximizing returns. Let us help you make the best real estate decisions and navigate the real estate market with confidence.",
-      buttonText: "Schedule a Consultation",
+      title1: "PROPERTY DEVELOPMENT",
+      title2: "AND CONSTRUCTION",
+      description: "We offer luxury real estate property investment opportunities tailored for savvy investors looking to secure the future of consistent financial inflow through real estate.",
+      buttonText: "Talk to an Expert",
       buttonLink: "/consultation"
     },
     {
       id: 2,
       backgroundImage: "/bo-slider-2.jpg", // Replace with your actual image
       subtitle: "WELCOME TO BO PROPERTIES",
-      title1: "PROPERTY DEVELOPMENT",
-      title2: "AND CONSTRUCTION",
-      description: "We offer luxury real estate property investment opportunities tailored for savvy investors looking to secure the future of consistent financial inflow through real estate.",
-      buttonText: "Talk to an Expert",
+      title1: "BO SHORTLETS",
+      title2: "",
+      description: "Experience comfort and convenience with our fully equipped shortlets, perfect for short-term stays, house parties, and more. Strategically located and designed with modern amenities, our shortlets ensure a seamless and luxurious stay.",
+      buttonText: "View Shortlets",
       buttonLink: "/expert"
     },
     {
       id: 3,
       backgroundImage: "/bo-slider-3.jpg", // Replace with your actual image
       subtitle: "WELCOME TO BO PROPERTIES",
-      title1: "PROPERTY MANAGEMENT",
-      title2: "SERVICES",
-      description: "Our dedicated property management team ensures your properties are well-maintained and occupied with quality tenants, maximizing your return on investment.",
+      title1: "PROPERTY SALES",
+      title2: "AND LEASING",
+      description: "BO Properties assists clients in selling or leasing properties, offering seamless processes and ensuring the best options are available for tenants and landlords.",
       buttonText: "Our Services",
       buttonLink: "/services"
     },
@@ -46,9 +46,9 @@ export default function Home() {
       id: 4,
       backgroundImage: "/bo-slider-4.jpg", // Replace with your actual image
       subtitle: "WELCOME TO BO PROPERTIES",
-      title1: "PROPERTY MANAGEMENT",
-      title2: "SERVICES",
-      description: "Our dedicated property management team ensures your properties are well-maintained and occupied with quality tenants, maximizing your return on investment.",
+      title1: "REAL ESTATE",
+      title2: "CONSULTANCY",
+      description: "BO Properties offers expert guidance on property investment, strategic buying, and maximizing returns. Let us help you make the best real estate decisions and navigate the real estate market with confidence.",
       buttonText: "Our Services",
       buttonLink: "/services"
     },
@@ -56,9 +56,9 @@ export default function Home() {
       id: 5,
       backgroundImage: "/bo-slider-5.jpg", // Replace with your actual image
       subtitle: "WELCOME TO BO PROPERTIES",
-      title1: "PROPERTY MANAGEMENT",
-      title2: "SERVICES",
-      description: "Our dedicated property management team ensures your properties are well-maintained and occupied with quality tenants, maximizing your return on investment.",
+      title1: "FACILITY MANAGEMENT",
+      title2: "",
+      description: "At BO Properties, our commitment doesn’t end after the sale. We remain your trusted partner, providing expert advice and dedicated personnel to manage and enhance your property for long-term value, returns and sustainability.",
       buttonText: "Our Services",
       buttonLink: "/services"
     }

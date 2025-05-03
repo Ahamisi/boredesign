@@ -1,19 +1,67 @@
-import React from 'react';
+'use client';
+
+import React, { useRef, useEffect, useState } from 'react';
 import Link from 'next/link';
+import { motion, useInView } from 'framer-motion';
 
 interface StatItemProps {
   number: string;
   label: string;
+  delay: number;
 }
 
-const StatItem: React.FC<StatItemProps> = ({ number, label }) => {
+const StatItem: React.FC<StatItemProps> = ({ number, label, delay }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const [count, setCount] = useState(0);
+  
+  // Extract numeric value and suffix
+  const numericValue = parseInt(number.replace(/[^0-9]/g, ''));
+  const suffix = number.replace(/[0-9]/g, '');
+  
+  useEffect(() => {
+    if (isInView) {
+      let start = 0;
+      const end = numericValue;
+      const duration = 2000; // 2 seconds
+      const increment = Math.ceil(end / (duration / 16)); // Update roughly every 16ms for 60fps
+      
+      // Don't start at 0
+      const timer = setInterval(() => {
+        start = Math.min(start + increment, end);
+        setCount(start);
+        
+        if (start === end) {
+          clearInterval(timer);
+        }
+      }, 16);
+      
+      return () => clearInterval(timer);
+    }
+  }, [isInView, numericValue]);
+  
   return (
-    <div className="flex flex-col items-center md:items-start">
-      <h3 className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary-blue-200 mb-2">
-        {number}
+    <motion.div 
+      ref={ref}
+      className="flex flex-col items-center md:items-start"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay }}
+    >
+      <h3 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-primary-blue-200 mb-2">
+        {isInView ? `${count}${suffix}` : number}
       </h3>
-      <p className="text-gray-700 text-lg">{label}</p>
-    </div>
+      <motion.p 
+        className="text-gray-700 text-lg"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: delay + 0.3 }}
+      >
+        {label}
+      </motion.p>
+    </motion.div>
   );
 };
 
@@ -23,18 +71,41 @@ const StatsSection: React.FC = () => {
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left side - Text content */}
-          <div className="flex flex-col justify-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800 leading-tight">
+          <motion.div 
+            className="flex flex-col justify-center"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <motion.h2 
+              className="text-4xl md:text-5xl font-bold mb-6 text-gray-800 leading-tight"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
               Bringing you luxury and Comfort
-            </h2>
-            <p className="text-gray-700 mb-8 leading-relaxed text-lg">
+            </motion.h2>
+            <motion.p 
+              className="text-gray-700 mb-8 leading-relaxed text-lg"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
               BO Properties is a forward-thinking real estate company committed to
               transforming the landscape of property investment and development across
               Nigeria. With a core focus on delivering premium accommodation solutions and
               lucrative investment opportunities, we pride ourselves on crafting spaces that
               seamlessly combine luxury, convenience, and sustainability.
-            </p>
-            <div>
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
               <Link 
                 href="/about-us"
                 className="inline-flex items-center gap-2 bg-primary-blue-200 hover:bg-primary-blue-300 text-white font-medium py-3 px-6 rounded-full transition-colors duration-300"
@@ -64,15 +135,15 @@ const StatsSection: React.FC = () => {
                   />
                 </svg>
               </Link>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right side - Stats */}
           <div className="grid grid-cols-2 gap-8 md:gap-12">
-            <StatItem number="30+" label="Listed Properties" />
-            <StatItem number="10+" label="Projects Completed" />
-            <StatItem number="10+" label="Facilities being Managed" />
-            <StatItem number="25+" label="Properties Sold" />
+            <StatItem number="7+" label="Listed Properties" delay={0.1} />
+            <StatItem number="4+" label="Projects Completed" delay={0.3} />
+            <StatItem number="50+" label="Facilities Managed" delay={0.5} />
+            <StatItem number="7+" label="Properties Sold" delay={0.7} />
           </div>
         </div>
       </div>
