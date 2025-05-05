@@ -123,14 +123,15 @@ const Header: React.FC<HeaderProps> = ({ isLightMode = false }) => {
     { title: 'Real Estate Consultancy', href: '/services/consultancy' },
     { title: 'Property Development', href: '/services/development' },
     { title: 'Property Management', href: '/services/management' },
-    { title: 'Investment Advisory', href: '/services/investment' }
+    { title: 'Property Sales and Leasing', href: '/services/sales' }
   ];
   
   const projectsItems = [
-    { title: 'Residential Projects', href: '/projects/residential' },
-    { title: 'Commercial Projects', href: '/projects/commercial' },
-    { title: 'Completed Projects', href: '/projects/completed' },
-    { title: 'Ongoing Projects', href: '/projects/ongoing' }
+    { title: 'Project Rio', href: '/projects/project-rio' },
+    { title: 'Primero', href: '/projects/primero' },
+    { title: 'Estellar', href: '/projects/estellar' },
+    { title: 'Estellar Prime', href: '/projects/estellar-prime' },
+    { title: 'Queens Court', href: '/projects/queens-court' }
   ];
   
   return (
@@ -145,7 +146,7 @@ const Header: React.FC<HeaderProps> = ({ isLightMode = false }) => {
             <Image 
               src={shouldUseLightMode ? "/logo-bo-properties-color.svg" : "/logo-bo-properties.svg"}
               alt="BO PROPERTIES"
-              width={80}
+              width={70}
               height={25}
               priority
             />
@@ -194,11 +195,16 @@ const Header: React.FC<HeaderProps> = ({ isLightMode = false }) => {
         </Link>
       </div>
       
-      {/* Mobile menu button */}
-      <div className="md:hidden">
+      {/* Mobile menu button - completely isolated */}
+      <div className="md:hidden z-50 relative">
         <button 
-          className={`p-2 ${shouldUseLightMode ? 'text-gray-800' : 'text-white'}`}
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          type="button"
+          className={`p-2 relative z-50 ${shouldUseLightMode ? 'text-gray-800' : 'text-white'}`}
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setMobileMenuOpen(!mobileMenuOpen);
+          }}
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
         >
           {mobileMenuOpen ? (
@@ -213,14 +219,16 @@ const Header: React.FC<HeaderProps> = ({ isLightMode = false }) => {
         </button>
       </div>
       
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile Menu Dropdown - with fixed z-index and pointer-events control */}
       <div 
-        className={`md:hidden absolute top-full left-0 right-0 shadow-lg transform transition-transform duration-300 ease-in-out ${
+        className={`md:hidden absolute top-full left-0 right-0 shadow-lg transform transition-transform duration-300 ease-in-out z-40 ${
           shouldUseLightMode
             ? 'bg-white text-gray-800'
             : 'bg-primary-blue-400 text-white'
         } ${
-          mobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
+          mobileMenuOpen 
+            ? 'translate-y-0 opacity-100 pointer-events-auto' 
+            : '-translate-y-full opacity-0 pointer-events-none'
         }`}
       >
         <div className="flex flex-col p-4">

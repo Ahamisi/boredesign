@@ -44,13 +44,13 @@ export default function AboutUsPage() {
           <div className="flex flex-col gap-6 w-full">
             <div className="bg-blue-50 rounded-xl p-6 text-left ">
               <div className="text-5xl font-bold text-[#0B7399]">
-                <AnimatedCounter end={50} />
+                <AnimatedCounter end={4} />
               </div>
               <div className="mt-2 text-lg font-semibold text-[#0B7399]">Projects Completed</div>
             </div>
             <div className="bg-gray-100 rounded-xl p-6 text-left ">
               <div className="text-5xl font-bold text-[#111116]">
-                <AnimatedCounter end={30} />
+                <AnimatedCounter end={7} />
               </div>
               <div className="mt-2 text-lg font-semibold text-[#111116]">Property Listed</div>
             </div>
@@ -58,7 +58,7 @@ export default function AboutUsPage() {
               <div className="text-5xl font-bold text-[#0E976D]">
                 <AnimatedCounter end={50} />
               </div>
-              <div className="mt-2 text-lg font-semibold text-[#0E976D]">Facilities Being Managed</div>
+              <div className="mt-2 text-lg font-semibold text-[#0E976D]">Facilities  Managed</div>
             </div>
           </div>
         </div>

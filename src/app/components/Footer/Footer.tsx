@@ -107,7 +107,7 @@ const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/projects/queenscourt-hostel" className="hover:text-white/80 transition-colors">
+                <Link href="/projects/queens-court" className="hover:text-white/80 transition-colors">
                   Queenscourt Hostel
                 </Link>
               </li>
@@ -117,8 +117,8 @@ const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/projects/rio" className="flex items-center hover:text-white/80 transition-colors">
-                  Rio
+                <Link href="/projects/project-rio" className="flex items-center hover:text-white/80 transition-colors">
+                  Project Rio
                   <span className="ml-2 text-xs px-2 py-0.5 bg-white/20 rounded-full">
                     Ongoing
                   </span>

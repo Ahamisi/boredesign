@@ -1,6 +1,9 @@
-import React from 'react';
+'use client';
+
+import React, { useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion, useInView } from 'framer-motion';
 
 interface ProjectCardProps {
   image: string;
@@ -9,6 +12,7 @@ interface ProjectCardProps {
   description: string;
   status?: string;
   slug: string;
+  index: number;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ 
@@ -17,18 +21,37 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   location, 
   description, 
   status, 
-  slug 
+  slug,
+  index
 }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  
   return (
-    <div className="flex flex-col h-full">
+    <motion.div 
+      ref={ref}
+      className="flex flex-col h-full"
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ 
+        duration: 0.6, 
+        delay: 0.2 + (index * 0.1),
+        ease: "easeOut" 
+      }}
+    >
       <div className="relative rounded-lg overflow-hidden h-64 md:h-72 lg:h-80 mb-4">
         <Image 
           src={image} 
           alt={title} 
           fill 
-          className="object-cover transition-transform duration-500 hover:scale-105"
+          className={`object-cover transition-transform duration-700 ${isInView ? 'scale-100' : 'scale-110'}`}
         />
-        <div className="absolute top-4 left-4 bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center">
+        <motion.div 
+          className="absolute top-4 left-4 bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center"
+          initial={{ opacity: 0, x: -20 }}
+          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+          transition={{ duration: 0.5, delay: 0.4 + (index * 0.1) }}
+        >
           <svg 
             className="h-4 w-4 mr-1 text-primary-blue-300" 
             fill="none" 
@@ -49,7 +72,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             />
           </svg>
           <span className="text-sm font-medium text-gray-800">{location}</span>
-        </div>
+        </motion.div>
       </div>
       
       <div className="flex-1 flex flex-col">
@@ -60,18 +83,35 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             </Link>
           </h3>
           {status && (
-            <span className="px-3 py-1 text-xs font-medium text-primary-blue-200 bg-primary-blue-100/10 rounded-full">
+            <motion.span 
+              className="px-3 py-1 text-xs font-medium text-primary-blue-200 bg-primary-blue-100/10 rounded-full"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.4, delay: 0.5 + (index * 0.1) }}
+            >
               {status}
-            </span>
+            </motion.span>
           )}
         </div>
-        <p className="text-gray-600 mb-4">{description}</p>
+        <motion.p 
+          className="text-gray-600 mb-4"
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.4, delay: 0.3 + (index * 0.1) }}
+        >
+          {description}
+        </motion.p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
 const ProjectsSection: React.FC = () => {
+  const headerRef = useRef(null);
+  const buttonRef = useRef(null);
+  const isHeaderInView = useInView(headerRef, { once: true, amount: 0.5 });
+  const isButtonInView = useInView(buttonRef, { once: true });
+  
   // Project data
   const projects = [
     {
@@ -80,7 +120,7 @@ const ProjectsSection: React.FC = () => {
       title: "Primero, Ilaje Bariga",
       location: "Ilaje, Bariga",
       description: "Featuring highly-rated shortlets, Primero redefines hospitality and rental opportunities.",
-      slug: "primero-ilaje-bariga"
+      slug: "primero"
     },
     {
       id: 2,
@@ -88,7 +128,7 @@ const ProjectsSection: React.FC = () => {
       title: "Queenscourt Hostel, Akoka",
       location: "Akoka",
       description: "Crafted for comfort and class offers students an elevated living experience",
-      slug: "queenscourt-hostel-akoka"
+      slug: "queens-court"
     },
     {
       id: 3,
@@ -112,18 +152,34 @@ const ProjectsSection: React.FC = () => {
   return (
     <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
+        <motion.div 
+          ref={headerRef}
+          className="mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isHeaderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.7 }}
+        >
+          <motion.h2 
+            className="text-3xl md:text-4xl font-bold mb-4 text-gray-800"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isHeaderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5 }}
+          >
             Our Projects
-          </h2>
-          <p className="text-gray-600 text-lg max-w-4xl">
+          </motion.h2>
+          <motion.p 
+            className="text-gray-600 text-lg max-w-4xl"
+            initial={{ opacity: 0 }}
+            animate={isHeaderInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             Each project is carefully designed to meet the unique needs of our clients, from students seeking secure and modern 
             accommodations to investors looking for high-yield assets.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-          {projects.map(project => (
+          {projects.map((project, index) => (
             <ProjectCard 
               key={project.id}
               image={project.image}
@@ -132,12 +188,19 @@ const ProjectsSection: React.FC = () => {
               description={project.description}
               status={project.status}
               slug={project.slug}
+              index={index}
             />
           ))}
         </div>
         
-        <div className="mt-12 text-center">
-          <Link 
+        <motion.div 
+          ref={buttonRef}
+          className="mt-12 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isButtonInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          {/* <Link 
             href="/projects" 
             className="inline-flex items-center gap-2 text-primary-blue-200 hover:text-primary-blue-300 font-semibold transition-colors"
           >
@@ -155,8 +218,8 @@ const ProjectsSection: React.FC = () => {
                 d="M17 8l4 4m0 0l-4 4m4-4H3" 
               />
             </svg>
-          </Link>
-        </div>
+          </Link> */}
+        </motion.div>
       </div>
     </section>
   );
