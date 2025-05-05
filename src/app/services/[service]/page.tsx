@@ -19,37 +19,37 @@ interface ServiceData {
 // Service data for all 4 services
 const services: ServiceData[] = [
   {
-    id: 'development',
+    id: 'property-purchase',
     title: 'Property Development and Construction',
     slug: 'development',
-    hero: '/images/services/development-hero.jpg',
+    hero: '/services/development-hero.png',
     description: 'At BO Properties, we offer luxury real estate property investment opportunities tailored for savvy investors looking to secure the future of consistent financial inflow through real estate. We focus on delivering innovative and sustainable housing solutions in prime locations across Lagos.',
     formHeading: 'Do you want a unique and stylish Property?',
     formSubheading: 'Fill out the form to learn more about our development opportunities.',
   },
   {
-    id: 'sales',
+    id: 'property-sale',
     title: 'Property Sales and Leasing',
     slug: 'sales',
-    hero: '/images/services/sales-hero.jpg',
+    hero: '/services/sales-hero.png',
     description: 'BO Properties assists clients in selling or leasing properties, offering seamless processes and ensuring the best options are available for tenants and landlords.',
     formHeading: 'Got a property you want to sell or lease?',
     formSubheading: 'Reach out to us to get started on your property journey.',
   },
   {
-    id: 'consultancy',
+    id: 'consultation',
     title: 'Real Estate Consultancy',
     slug: 'consultancy',
-    hero: '/images/services/consultancy-hero.jpg',
+    hero: '/services/consultancy-hero.png',
     description: 'Our expert real estate consultants provide guidance on property investments, market analysis, and acquisition strategies. We help you make informed decisions based on market trends and insights.',
     formHeading: 'Need Guidance or resources?',
     formSubheading: 'Our consultants are ready to assist with your real estate needs.',
   },
   {
-    id: 'management',
+    id: 'property-management',
     title: 'Facility Management',
     slug: 'management',
-    hero: '/images/services/management-hero.jpg',
+    hero: '/services/management-hero.png',
     description: 'We provide comprehensive facility management services to ensure your property maintains its value and operates efficiently. From maintenance to tenant relations, we handle it all.',
     formHeading: 'Need Guidance or resources?',
     formSubheading: 'Let us handle the day-to-day management of your property.',
@@ -58,10 +58,15 @@ const services: ServiceData[] = [
 
 // Generate metadata for the page
 export async function generateMetadata({ params }: { params: { service: string } }) {
-  const service = services.find(s => s.slug === params.service);
+  // Await the params before using them
+  const serviceSlug = await params.service;
+  console.log('Service slug:', serviceSlug);
+  
+  const service = services.find(s => s.slug === serviceSlug);
+  console.log('Found service:', service);
   
   if (!service) {
-    return {
+    return {  
       title: 'Service Not Found | BO Properties',
     };
   }
@@ -79,8 +84,10 @@ export function generateStaticParams() {
   }));
 }
 
-export default function ServicePage({ params }: { params: { service: string } }) {
-  const service = services.find(s => s.slug === params.service);
+export default async function ServicePage({ params }: { params: { service: string } }) {
+  // Await the params
+  const serviceSlug = await params.service;
+  const service = services.find(s => s.slug === serviceSlug);
   
   if (!service) {
     return <div>Service not found</div>;
@@ -120,8 +127,8 @@ export default function ServicePage({ params }: { params: { service: string } })
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-12">
-            <div className="w-full lg:w-1/2">
-              <div className="text-[#053B6E] uppercase tracking-wide font-semibold mb-3 bg-[#E4F0FB] rounded-full p-[8px]">
+            <div className="w-full lg:w-1/2 flex flex-col justify-center">
+              <div className="text-[#053B6E] uppercase tracking-wide font-semibold mb-3 bg-[#E4F0FB] rounded-full p-[8px] w-fit">
                 {service.title}
               </div>
               
@@ -135,18 +142,22 @@ export default function ServicePage({ params }: { params: { service: string } })
               
               {/* Mobile form will show here */}
               <div className="mt-8 block lg:hidden">
-                <h3 className="text-xl font-semibold mb-2">Send us a message</h3>
+                <h3 className="text-xl font-semibold mb-2 text-black">Send us a message</h3>
                 <p className="text-gray-600 mb-4">
                   Kindly fill this form to send your message. We are available 24/7 to answer your questions.
                 </p>
-                <ContactForm />
+                <ContactForm 
+                  showHeader={false}
+                  formWidth="full"
+                  prefilledValues={{ inquiry: service.id }}
+                />
               </div>
             </div>
             
             {/* Desktop Form */}
             <div className="w-full lg:w-1/2 hidden lg:block">
               <div className="bg-white p-8 rounded-lg shadow-sm">
-                <h3 className="text-2xl font-semibold mb-2">Send us a message</h3>
+                <h3 className="text-2xl font-semibold mb-2 text-black">Send us a message</h3>
                 <p className="text-gray-600 mb-6">
                   Kindly fill this form to send your message. We are available 24/7 to answer your questions.
                 </p>
@@ -163,7 +174,7 @@ export default function ServicePage({ params }: { params: { service: string } })
       </section>
       
       {/* Other Services Section */}
-      <section className="py-16">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-gray-800 mb-12">Other Services</h2>
           

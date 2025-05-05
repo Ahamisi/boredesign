@@ -26,9 +26,8 @@ const ProjectRioPage: React.FC = () => {
     shortDescription: 'Project Rio, at the heart of Ikeja, is a masterpiece of modern architecture designed to elevate the living experience.',
     description: "Project Rio, at the heart of Ikeja, is a masterpiece of modern architecture designed to elevate the living experience. Thoughtfully crafted to suit diverse lifestyles, this exceptional property combines style, functionality, and innovation, making it the ideal choice for contemporary living.",
     sliderImages: [
-      { id: '1', src: '/projects/project-rio-bo-properties.jpg', alt: 'Project Rio Exterior' },
-      { id: '2', src: '/projects/rio-living-room.jpg', alt: 'Rio Living Room' },
-      { id: '3', src: '/projects/rio-bedroom.jpg', alt: 'Rio Master Bedroom' },
+      { id: '1', src: '/projects/primero/primero-1.jpg', alt: 'Project Primero' },
+      { id: '2', src: '/projects/primero/primero-2.png', alt: 'Primero' },
     ],
     plans: [
       
@@ -52,7 +51,8 @@ const ProjectRioPage: React.FC = () => {
       }
     ],
     galleryImages: [
-   
+      { id: '1', src: '/projects/primero/primero-1.jpg', alt: 'Project Primero' },
+      { id: '2', src: '/projects/primero/primero-2.png', alt: 'Primero' },
     ]
   };
 

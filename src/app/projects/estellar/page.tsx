@@ -26,11 +26,13 @@ const ProjectRioPage: React.FC = () => {
     shortDescription: 'Project ESTELLAR is an exquisite apartment building situated in the heart of Akoka.',
     // description: "Estellar Prime is a stunning masterpiece of modern architecture, crafted to offer an exceptional blend of comfort, luxury, and elegance. Designed with the investor in mind, it provides flexibility to suit varying budgets and investment appetites. With a 22-year long lease offering returns of up to ₦80 million, Estellar Prime is an opportunity that redefines the concept of investment and living.",
     sliderImages: [
-    { id: '0', src: '/projects/estellar-1.jpg', alt: 'Estellar Exterior' },
-      { id: '1', src: '/projects/estellar-1.jpg', alt: 'Estellar Exterior' },
-      { id: '2', src: '/projects/estellar-2.jpg', alt: 'Estellar Living Room' },
-      { id: '3', src: '/projects/estellar-3.jpg', alt: 'Estellar Master Bedroom' },
-      { id: '3', src: '/projects/estellar-4.jpg', alt: 'Estellar Master Bedroom' },
+      { id: '0', src: '/projects/estellar/estellar-finished-1.jpg', alt: 'Estellar Exterior' },
+      { id: '1', src: '/projects/estellar/estellar-finished-2.jpg', alt: 'Estellar Exterior' },
+      { id: '2', src: '/projects/estellar/estellar-finished-3.jpg', alt: 'Estellar Exterior' },
+      { id: '4', src: '/projects/estellar-1.jpg', alt: 'Estellar Exterior' },
+      { id: '5', src: '/projects/estellar-2.jpg', alt: 'Estellar Living Room' },
+      { id: '6', src: '/projects/estellar-3.jpg', alt: 'Estellar Master Bedroom' },
+      { id: '7', src: '/projects/estellar-4.jpg', alt: 'Estellar Master Bedroom' },
 
     ],
     plans: [
@@ -55,10 +57,13 @@ const ProjectRioPage: React.FC = () => {
       }
     ],
     galleryImages: [
-        { id: '1', src: '/projects/estellar-1.jpg', alt: 'Estellar Exterior' },
-        { id: '2', src: '/projects/estellar-2.jpg', alt: 'Estellar Living Room' },
-        { id: '3', src: '/projects/estellar-3.jpg', alt: 'Estellar Master Bedroom' },
-        { id: '3', src: '/projects/estellar-4.jpg', alt: 'Estellar Master Bedroom' },
+      { id: '0', src: '/projects/estellar/estellar-finished-1.jpg', alt: 'Estellar Exterior' },
+      { id: '1', src: '/projects/estellar/estellar-finished-2.jpg', alt: 'Estellar Exterior' },
+      { id: '2', src: '/projects/estellar/estellar-finished-3.jpg', alt: 'Estellar Exterior' },
+      { id: '4', src: '/projects/estellar-1.jpg', alt: 'Estellar Exterior' },
+      { id: '5', src: '/projects/estellar-2.jpg', alt: 'Estellar Living Room' },
+      { id: '6', src: '/projects/estellar-3.jpg', alt: 'Estellar Master Bedroom' },
+      { id: '7', src: '/projects/estellar-4.jpg', alt: 'Estellar Master Bedroom' },
     ]
   };
 

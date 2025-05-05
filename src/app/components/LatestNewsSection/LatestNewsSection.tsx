@@ -17,6 +17,7 @@ interface BlogPost {
 const LatestNewsSection: React.FC = () => {
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   
   const sectionRef = useRef(null);
   const headerRef = useRef(null);
@@ -30,15 +31,19 @@ const LatestNewsSection: React.FC = () => {
           _id,
           title,
           "slug": slug.current,
-          "mainImage": mainImage.asset->url
+          "mainImage": mainImage.asset->url,
+          publishedAt
         }
       `;
       
       try {
+        console.log("Fetching latest news...");
         const posts = await client.fetch(query);
+        console.log("Fetched posts:", posts);
         setBlogPosts(posts);
       } catch (error) {
         console.error("Error fetching blog posts:", error);
+        setError("Failed to load latest news");
       } finally {
         setIsLoading(false);
       }
@@ -46,6 +51,11 @@ const LatestNewsSection: React.FC = () => {
 
     fetchPosts();
   }, []);
+
+  if (!isLoading && blogPosts.length === 0 && !error) {
+    console.log("No blog posts found");
+    return null;
+  }
 
   return (
     <section ref={sectionRef} className="py-16 md:py-24 bg-white">
@@ -84,10 +94,14 @@ const LatestNewsSection: React.FC = () => {
               href="/blog" 
               className="inline-flex items-center px-5 py-2 rounded-full text-primary-blue-300 border border-primary-blue-300 hover:bg-primary-blue-50 transition-colors duration-300 text-sm font-medium"
             >
-              See all Post
+              See all Posts
             </Link>
           </motion.div>
         </motion.div>
+        
+        {error && (
+          <div className="text-center py-8 text-red-500">{error}</div>
+        )}
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {isLoading ? (
@@ -104,17 +118,16 @@ const LatestNewsSection: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.1 * index }}
               >
                 <Link href={`/blog/${post.slug}`} className="block relative aspect-[4/3] w-full rounded-lg overflow-hidden mb-4">
-                  <motion.div
-                    // whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.4 }}
-                  >
-                    <Image 
-                      src={post.mainImage || '/placeholder-image.jpg'} 
-                      alt={post.title} 
-                      fill 
-                      className="object-cover transition-transform duration-500"
-                    />
-                  </motion.div>
+                  <Image 
+                    src={post.mainImage || '/placeholder-image.jpg'} 
+                    alt={post.title} 
+                    fill 
+                    className="object-cover transition-transform duration-500"
+                    onError={(e) => {
+                      console.error(`Failed to load image for post: ${post.title}`);
+                      e.currentTarget.src = '/placeholder-image.jpg';
+                    }}
+                  />
                 </Link>
                 <Link href={`/blog/${post.slug}`} className="block group">
                   <motion.h3 
@@ -135,7 +148,7 @@ const LatestNewsSection: React.FC = () => {
               animate={isInView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 0.5 }}
             >
-              No blog posts found.
+              No blog posts found. Check back soon for updates!
             </motion.p>
           )}
         </div>

@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
               <p className="text-lg font-medium mb-4">Follow us:</p>
               <div className="flex space-x-4 items-center">
                 <a 
-                  href="https://twitter.com/boproperties" 
+                  href="https://twitter.com/bopropertiesng" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
                   </svg>
                 </a>
                 <a 
-                  href="https://facebook.com/boproperties" 
+                  href="https://web.facebook.com/people/Ifedayo-Okungbowa/100086362133521" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
                   </svg>
                 </a>
                 <a 
-                  href="https://instagram.com/boproperties" 
+                  href="https://www.instagram.com/bopropertiesng" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"

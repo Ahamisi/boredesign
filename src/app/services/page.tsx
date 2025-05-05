@@ -10,28 +10,28 @@ const services = [
     id: 'development',
     title: 'Property Development and Construction',
     slug: 'development',
-    image: '/images/services/development-hero.jpg',
+    image: '/services/development-hero.png',
     description: 'Luxury property investment opportunities in prime locations across Lagos.'
   },
   {
     id: 'sales',
     title: 'Property Sales and Leasing',
     slug: 'sales',
-    image: '/images/services/sales-hero.jpg',
+    image: '/services/sales-hero.png',
     description: 'Seamless processes for selling or leasing properties with the best options.'
   },
   {
     id: 'consultancy',
     title: 'Real Estate Consultancy',
     slug: 'consultancy',
-    image: '/images/services/consultancy-hero.jpg',
+    image: '/services/consultancy-hero.png',
     description: 'Expert guidance on property investments and market analysis.'
   },
   {
     id: 'management',
     title: 'Facility Management',
     slug: 'management',
-    image: '/images/services/management-hero.jpg',
+    image: '/services/management-hero.png',
     description: 'Comprehensive facility management to maintain property value.'
   }
 ];
