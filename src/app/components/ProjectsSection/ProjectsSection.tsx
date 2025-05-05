@@ -127,7 +127,7 @@ const ProjectsSection: React.FC = () => {
       image: "/projects/queens-court-bo-properties.jpg",
       title: "Queenscourt Hostel, Akoka",
       location: "Akoka",
-      description: "Crafted for comfort and class offers students an elevated living experience",
+      description: "Crafted for comfort and class; offers students an elevated living experience",
       slug: "queens-court"
     },
     {
@@ -143,7 +143,7 @@ const ProjectsSection: React.FC = () => {
       image: "/projects/project-rio-bo-properties.jpg",
       title: "Project Rio",
       location: "Ikeja",
-      description: "Crafted for comfort and class offers students an elevated living experience",
+      description: "Crafted for comfort and class; offers students an elevated living experience",
       status: "Ongoing",
       slug: "project-rio"
     }

@@ -8,9 +8,9 @@ export default function ContactInfo() {
       <h1 className="text-3xl md:text-4xl font-bold mb-4">We Are Ready to Help</h1>
       
       <p className="mb-10 text-white/90">
-        Let's discuss how BOProperties can help you achieve your Real Estate goal. 
-        Whether you're interested in our Real Estate Management, you want to sell a 
-        property and many more, we're here to help
+        Let&apos;s discuss how BOProperties can help you achieve your Real Estate goal. 
+        Whether you&apos;re interested in our Real Estate Management, you want to sell a 
+        property and many more, we&apos;re here to help
       </p>
       
       <div className="space-y-8">

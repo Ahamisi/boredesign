@@ -103,7 +103,7 @@ export default function ContactForm({
     
     // Validate message (minimum length)
     if (formData.message.trim().length < 10) {
-      newErrors.message = 'Please provide a detailed message (at least 10 characters)';
+      newErrors.message = "Please provide a detailed message (at least 10 characters)";
     }
     
     // Validate terms acceptance on mobile
@@ -165,7 +165,7 @@ export default function ContactForm({
             </svg>
           </div>
           <h2 className="text-2xl font-bold text-gray-800 mb-2">Thank You!</h2>
-          <p className="text-gray-600 mb-6">Your message has been received. We'll get back to you shortly.</p>
+          <p className="text-gray-600 mb-6">Your message has been received. We will get back to you shortly.</p>
           <button 
             onClick={() => setSubmitSuccess(false)}
             className="bg-primary-blue-400 text-white py-2 px-6 rounded-full hover:bg-primary-blue-500 transition-colors"

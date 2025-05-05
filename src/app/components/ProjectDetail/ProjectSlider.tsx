@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
@@ -28,27 +28,29 @@ const ProjectSlider: React.FC<ProjectSliderProps> = ({
   const [isTransitioning, setIsTransitioning] = useState(false);
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
+  const [isPaused, setIsPaused] = useState(false);
 
-  const goToNext = () => {
+  // Wrap goToNext in useCallback
+  const goToNext = useCallback(() => {
     if (isTransitioning) return;
     setIsTransitioning(true);
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     setTimeout(() => setIsTransitioning(false), 500);
-  };
+  }, [isTransitioning, images.length]);
 
-  const goToPrev = () => {
+  const goToPrev = useCallback(() => {
     if (isTransitioning) return;
     setIsTransitioning(true);
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
     setTimeout(() => setIsTransitioning(false), 500);
-  };
+  }, [isTransitioning, images.length]);
 
-  const goToSlide = (index: number) => {
+  const goToSlide = useCallback((index: number) => {
     if (isTransitioning || index === currentIndex) return;
     setIsTransitioning(true);
     setCurrentIndex(index);
     setTimeout(() => setIsTransitioning(false), 500);
-  };
+  }, [isTransitioning, currentIndex]);
 
   // Touch handlers for mobile swipe
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -70,14 +72,16 @@ const ProjectSlider: React.FC<ProjectSliderProps> = ({
     }
   };
 
-  // Auto-rotation timer
+  // Auto-rotation timer with fixed dependency array
   useEffect(() => {
-    const timer = setTimeout(() => {
-      goToNext();
-    }, 5000);
-
-    return () => clearTimeout(timer);
-  }, [currentIndex]);
+    const interval = setInterval(() => {
+      if (!isPaused) {
+        goToNext();
+      }
+    }, 6000);
+    
+    return () => clearInterval(interval);
+  }, [isPaused, goToNext]); // Now goToNext is properly memoized
 
   return (
     <motion.div 

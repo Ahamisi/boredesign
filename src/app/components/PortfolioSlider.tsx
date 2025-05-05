@@ -13,7 +13,7 @@ const projects = [
     image: '/projects/queens-court-bo-properties.jpg', // Replace with your actual image path
     location: 'Akoka',
     title: 'Queenscourt Hostel, Akoka',
-    description: 'Crafted for comfort and class offers students an elevated living experience.',
+    description: 'Crafted for comfort and class; offers students an elevated living experience.',
   },
   {
     image: '/projects/estellar-prime-bo-properties.jpg', // Replace with your actual image path
@@ -25,7 +25,7 @@ const projects = [
     image: '/projects/project-rio-bo-properties.jpg', // Replace with your actual image path
     location: 'Ikeja',
     title: 'Project Rio',
-    description: 'Crafted for comfort and class offers students an elevated living experience',
+    description: 'Crafted for comfort and class; offers students an elevated living experience',
   },
   // Add more projects as needed
 ];

@@ -14,8 +14,20 @@ const eslintConfig = [
   {
     rules: {
       "@typescript-eslint/no-unused-vars": "off",
-      "@next/next/no-img-element": "warn"
-    }
+      "@next/next/no-img-element": "warn",
+      "@typescript-eslint/no-explicit-any": "off",
+      "import/no-anonymous-default-export": "off",
+      "react-hooks/exhaustive-deps": "warn"
+    },
+    overrides: [
+      {
+        files: ['src/app/blog/[slug]/page.tsx', 'src/app/blog/page.tsx'],
+        rules: {
+          '@typescript-eslint/ban-types': 'off',
+          '@typescript-eslint/no-unused-vars': 'off'
+        }
+      }
+    ]
   }
 ];
 

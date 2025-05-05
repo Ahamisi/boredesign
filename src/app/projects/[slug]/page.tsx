@@ -80,7 +80,7 @@ export default function ProjectDetail() {
         <Header isLightMode={true} />
         <div className="container mx-auto px-4 py-20 text-center">
           <h1 className="text-3xl font-bold mb-4">Project Not Found</h1>
-          <p className="mb-8">The project you're looking for doesn't exist or has been removed.</p>
+          <p className="mb-8">The project you&apos;re looking for doesn&apos;t exist or has been removed.</p>
         </div>
       </div>
     );

@@ -19,6 +19,23 @@ interface PageProps {
   }
 }
 
+type SanityDocument = {
+  _id: string;
+  title?: string;
+  mainImage?: { 
+    asset?: { 
+      url?: string;
+      _ref?: string;
+    };
+    alt?: string;
+  };
+  slug?: { current?: string };
+  publishedAt?: string;
+  excerpt?: string;
+  readTime?: number;
+  [key: string]: any;
+};
+
 export default async function BlogPage({ 
   searchParams 
 }: {
@@ -85,7 +102,7 @@ export default async function BlogPage({
         {/* Blog posts grid */}
         <div className="container mx-auto px-4 md:px-8 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {posts.map((post: any) => (
+            {posts.map((post: SanityDocument) => (
               <article key={post._id} className="flex flex-col h-full">
                 <Link href={`/blog/${post.slug.current}`} className="block relative aspect-[4/3] w-full rounded-lg overflow-hidden mb-4">
                   <Image 
