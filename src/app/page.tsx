@@ -5,11 +5,11 @@ import StatsSection from "./components/StatsSection";
 import ProjectsSection from "./components/ProjectsSection";
 import ServicesSection from "./components/ServicesSection";
 import TestimonialsSection from "./components/TestimonialsSection";
-import LatestNewsSection from "./components/LatestNewsSection";
+import LatestNewsSection from "./components/LatestNewsSection/LatestNewsSection";
 import NewsletterSection from "./components/NewsletterSection";
 import WhyChooseUs from "./components/WhyChooseUs";
 
-export default function Home() {
+export default async function Home() {
   // Define slide data that exactly matches the images
   const heroSlides = [
     {
@@ -58,7 +58,7 @@ export default function Home() {
       subtitle: "WELCOME TO BO PROPERTIES",
       title1: "FACILITY MANAGEMENT",
       title2: "",
-      description: "At BO Properties, our commitment doesn’t end after the sale. We remain your trusted partner, providing expert advice and dedicated personnel to manage and enhance your property for long-term value, returns and sustainability.",
+      description: "At BO Properties, our commitment doesn't end after the sale. We remain your trusted partner, providing expert advice and dedicated personnel to manage and enhance your property for long-term value, returns and sustainability.",
       buttonText: "Our Services",
       buttonLink: "/services"
     }
@@ -72,7 +72,7 @@ export default function Home() {
       <ProjectsSection />
       <ServicesSection />
       <WhyChooseUs />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
       <NewsletterSection />
       <LatestNewsSection />
 
