@@ -1,4 +1,3 @@
-'use client';
 
 import React from 'react';
 import { useParams } from 'next/navigation';
@@ -66,8 +65,14 @@ const projectsData = {
   // Add more projects here
 };
 
-export default function ProjectDetail() {
-  const { slug } = useParams();
+export async function generateStaticParams() {
+  return Object.keys(projectsData).map((slug) => ({
+    slug: slug,
+  }));
+}
+
+export default function ProjectDetail({ params }: { params: { slug: string } }) {
+  const { slug } = params;
   const projectSlug = Array.isArray(slug) ? slug[0] : slug;
   
   // Get project data based on slug
