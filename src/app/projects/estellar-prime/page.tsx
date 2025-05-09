@@ -22,7 +22,7 @@ const ProjectRioPage: React.FC = () => {
   const rioProject = {
     name: 'Estellar Prime',
     location: 'Abule Ijesha, Yaba',
-    status: 'Completed',
+    status: 'Ongoing',
     shortDescription: 'Estellar Prime is a stunning masterpiece of modern architecture, crafted to offer an exceptional blend of comfort, luxury, and elegance.',
     description: "Estellar Prime is a stunning masterpiece of modern architecture, crafted to offer an exceptional blend of comfort, luxury, and elegance. Designed with the investor in mind, it provides flexibility to suit varying budgets and investment appetites. With a 22-year long lease offering returns of up to ₦80 million, Estellar Prime is an opportunity that redefines the concept of investment and living.",
     sliderImages: [
@@ -134,7 +134,7 @@ const ProjectRioPage: React.FC = () => {
         slug: 'estellar-prime',
         location: 'Abule Ijesha, Yaba',
         description: 'Featuring highly-rated shortlets, Primero redefines hospitality and rental opportunities.',
-        image: '/projects/estellar-prime-bo-properties.jpg',
+        image: '/projects/estellar-prime/estellar-prime.jpg',
       }
     ],
     galleryImages: [

@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { useParams } from 'next/navigation';
 import ProjectSlider from '@/app/components/ProjectDetail/ProjectSlider';
 import ProjectFeatures from '@/app/components/ProjectDetail/ProjectFeatures';
 import PricingPlans from '@/app/components/ProjectDetail/PricingPlans';

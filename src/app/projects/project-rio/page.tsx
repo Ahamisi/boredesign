@@ -26,9 +26,12 @@ const ProjectRioPage: React.FC = () => {
     shortDescription: 'Located just 10 minutes from the international airport, Rio promises a premium living and investment experience in the heart of Ikeja.',
     description: 'Project Rio, at the heart of Ikeja, is a masterpiece of modern architecture designed to elevate the living experience. Thoughtfully crafted to suit diverse lifestyles, this exceptional property combines style, functionality, and innovation, making it the ideal choice for contemporary living.',
     sliderImages: [
-      { id: '1', src: '/projects/project-rio-bo-properties.jpg', alt: 'Project Rio Exterior' },
-      { id: '2', src: '/projects/rio-living-room.jpg', alt: 'Rio Living Room' },
-      { id: '3', src: '/projects/rio-bedroom.jpg', alt: 'Rio Master Bedroom' },
+      { id: '1', src: '/projects/project-rio/project-rio-2.jpg', alt: 'Rio Master Bedroom' },
+      { id: '2', src: '/projects/project-rio/project-rio-3.jpg', alt: 'Rio Master Bedroom' },
+      { id: '3', src: '/projects/project-rio/project-rio-4.jpg', alt: 'Rio Master Bedroom' },
+      { id: '4', src: '/projects/project-rio-bo-properties.jpg', alt: 'Project Rio Exterior' },
+      { id: '5', src: '/projects/project-rio/project-rio-5.jpg', alt: 'Rio Master Bedroom' },
+
     ],
     plans: [
       {
@@ -95,11 +98,17 @@ const ProjectRioPage: React.FC = () => {
         slug: 'estellar-prime',
         location: 'Abule Ijesha, Yaba',
         description: 'Featuring highly-rated shortlets, Primero redefines hospitality and rental opportunities.',
-        image: '/projects/estellar-prime-bo-properties.jpg',
+        image: '/projects/estellar-prime/estellar-prime.jpg',
       }
     ],
     galleryImages: [
-   
+      { id: '1', src: '/projects/project-rio/project-rio-2.jpg', alt: 'Rio Master Bedroom' },
+      { id: '2', src: '/projects/project-rio/project-rio-3.jpg', alt: 'Rio Master Bedroom' },
+      { id: '3', src: '/projects/project-rio/project-rio-4.jpg', alt: 'Rio Master Bedroom' },
+      { id: '4', src: '/projects/project-rio/project-rio-5.jpg', alt: 'Rio Master Bedroom' },
+      { id: '5', src: '/projects/project-rio-bo-properties.jpg', alt: 'Project Rio Exterior' },
+
+
     ]
   };
 

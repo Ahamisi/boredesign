@@ -90,8 +90,8 @@ const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/projects" className="hover:text-white/80 transition-colors">
-                  Projects
+                <Link href="/contact" className="hover:text-white/80 transition-colors">
+                  Contact us
                 </Link>
               </li>
             </ul>
@@ -104,6 +104,9 @@ const Footer: React.FC = () => {
               <li>
                 <Link href="/projects/estellar-prime" className="hover:text-white/80 transition-colors">
                   Estellar Prime
+                  <span className="ml-2 text-xs px-2 py-0.5 bg-white/20 rounded-full">
+                    Ongoing
+                  </span>
                 </Link>
               </li>
               <li>
@@ -122,6 +125,12 @@ const Footer: React.FC = () => {
                   <span className="ml-2 text-xs px-2 py-0.5 bg-white/20 rounded-full">
                     Ongoing
                   </span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/projects/estellar" className="flex items-center hover:text-white/80 transition-colors">
+                  Estellar
+                 
                 </Link>
               </li>
             </ul>

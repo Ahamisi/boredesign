@@ -132,21 +132,31 @@ const ProjectsSection: React.FC = () => {
     },
     {
       id: 3,
-      image: "/projects/estellar-prime-bo-properties.jpg",
-      title: "Estellar Prime",
-      location: "Abule Ijesha, Yaba",
-      description: "Featuring highly-rated shortlets, Primero redefines hospitality and rental opportunities.",
-      slug: "estellar-prime"
+      image: "/projects/estellar/estellar-finished-1.jpg",
+      title: "Estellar",
+      location: "Akoka, Yaba",
+      description: "Project ESTELLAR is an exquisite apartment building situated in the heart of Akoka.",
+      slug: "estellar"
     },
     {
       id: 4,
+      image: "/projects/estellar-prime/estellar-prime.jpg",
+      title: "Estellar Prime",
+      location: "Abule Ijesha, Yaba",
+      description: "Featuring highly-rated shortlets, Primero redefines hospitality and rental opportunities.",
+      slug: "estellar-prime",
+      status: "Ongoing"
+    },
+    {
+      id: 5,
       image: "/projects/project-rio-bo-properties.jpg",
       title: "Project Rio",
       location: "Ikeja",
       description: "Crafted for comfort and class; offers students an elevated living experience",
       status: "Ongoing",
       slug: "project-rio"
-    }
+    },
+    
   ];
 
   return (

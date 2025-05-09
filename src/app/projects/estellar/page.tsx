@@ -53,7 +53,7 @@ const ProjectRioPage: React.FC = () => {
         slug: 'estellar-prime',
         location: 'Abule Ijesha, Yaba',
         description: 'Featuring highly-rated shortlets, Primero redefines hospitality and rental opportunities.',
-        image: '/projects/estellar-prime-bo-properties.jpg',
+        image: '/projects/estellar-prime/estellar-prime.jpg',
       }
     ],
     galleryImages: [
