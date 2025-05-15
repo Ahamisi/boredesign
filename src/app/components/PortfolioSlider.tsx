@@ -16,10 +16,10 @@ const projects = [
     description: 'Crafted for comfort and class; offers students an elevated living experience.',
   },
   {
-    image: '/projects/estellar-prime-bo-properties.jpg', // Replace with your actual image path
+    image: '/projects/estellar-prime/estellar-prime.jpg', // Replace with your actual image path
     location: 'Abule Ijesha, Yaba',
     title: 'Estellar Prime',
-    description: 'Featuring highly-rated shortlets, Primero redefines hospitality and rental opportunities.',
+    description: 'Estellar Prime is a stunning masterpiece of modern architecture, crafted to...',
   },
   {
     image: '/projects/project-rio-bo-properties.jpg', // Replace with your actual image path

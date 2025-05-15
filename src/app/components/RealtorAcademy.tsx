@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function RealtorAcademySection() {
   return (
@@ -12,9 +13,9 @@ export default function RealtorAcademySection() {
           <p className="text-white text-lg mb-8 leading-relaxed">
             At BO Properties, we are more than developers; we are partners in growth and empowerment. Our innovative BO Properties Realtors Academy trains aspiring realtors, providing mentorship, hands-on skills, and a pathway to earning incentives and commissions as they embark on their real estate careers. BO Properties remains a trusted name in Nigeria’s real estate market, striving to elevate industry standards and empower communities.
           </p>
-          <button className="bg-white text-primary-blue-300 font-semibold px-8 py-3 rounded-full shadow hover:bg-gray-100 transition w-fit cursor-pointer">
+          <Link href="https://wa.me/2349075149463" target="_blank" className="bg-white text-primary-blue-300 font-semibold px-8 py-3 rounded-full shadow hover:bg-gray-100 transition w-fit cursor-pointer">
             Inquire about our Academy
-          </button>
+          </Link>
         </div>
         {/* Right: Image */}
         <div className="flex-1 flex items-center justify-center p-4 md:p-8">

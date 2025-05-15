@@ -20,7 +20,7 @@ export default async function Home() {
       title2: "AND CONSTRUCTION",
       description: "We offer luxury real estate property investment opportunities tailored for savvy investors looking to secure the future of consistent financial inflow through real estate.",
       buttonText: "Talk to an Expert",
-      buttonLink: "/consultation"
+      buttonLink: "/contact"
     },
     {
       id: 2,
@@ -30,7 +30,7 @@ export default async function Home() {
       title2: "",
       description: "Experience comfort and convenience with our fully equipped shortlets, perfect for short-term stays, house parties, and more. Strategically located and designed with modern amenities, our shortlets ensure a seamless and luxurious stay.",
       buttonText: "View Shortlets",
-      buttonLink: "/expert"
+      buttonLink: "/projects/queens-court"
     },
     {
       id: 3,
