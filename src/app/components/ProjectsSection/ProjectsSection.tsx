@@ -152,7 +152,7 @@ const ProjectsSection: React.FC = () => {
       image: "/projects/project-rio-bo-properties.jpg",
       title: "Project Rio",
       location: "Ikeja",
-      description: "Crafted for comfort and class; offers students an elevated living experience",
+      description: "Rio promises a premium living and investment experience in the heart of Ikeja.",
       status: "Ongoing",
       slug: "project-rio"
     },

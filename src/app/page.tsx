@@ -24,7 +24,7 @@ export default async function Home() {
     },
     {
       id: 2,
-      backgroundImage: "/bo-slider-2.jpg", // Replace with your actual image
+      backgroundImage: "/estellar-finished-1.jpg", // Replace with your actual image
       subtitle: "WELCOME TO BO PROPERTIES",
       title1: "BO SHORTLETS",
       title2: "",
