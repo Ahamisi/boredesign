@@ -41,7 +41,7 @@ export default function PortfolioSlider() {
 
   return (
     <section className="max-w-7xl mx-auto px-4 py-16 mt-24">
-      <h2 className="text-4xl font-bold mb-2 text-black">Our Portfolio</h2>
+      <h2 className="text-4xl font-bold mb-2 text-black text-center md:text-left">Our Portfolio</h2>
       <p className="mb-10 text-gray-600 text-lg text-center md:text-left">
         Each project is carefully designed to meet the unique needs of our clients, from students seeking secure and modern accommodations to investors looking for high-yield assets.
       </p>

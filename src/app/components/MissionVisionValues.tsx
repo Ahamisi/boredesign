@@ -77,9 +77,10 @@ export default function MissionVisionValues() {
                 variants={{ visible: { opacity: 1, y: 0, transition: { delay: 0.3 } } }}
               >
                 <div className="flex items-center h-full bg-[#0097CE] text-white px-4 rounded-[16px] font-medium shadow">
-                  <span className="bg-white text-[#0097CE] font-bold w-10 h-10 flex items-center justify-center rounded-full mr-3">A</span>
-                  Accountability
+                  <span className="bg-white text-[#0097CE] font-bold w-10 h-10 flex items-center justify-center rounded-full mr-3">T</span>
+                  Transparency
                 </div>
+               
               </motion.div>
 
               <motion.div
@@ -89,9 +90,9 @@ export default function MissionVisionValues() {
                 animate={controls}
                 variants={{ visible: { opacity: 1, y: 0, transition: { delay: 0.4 } } }}
               >
-                <div className="flex items-center h-full bg-[#0097CE] text-white px-4 rounded-[16px] font-medium shadow">
-                  <span className="bg-white text-[#0097CE] font-bold w-10 h-10 flex items-center justify-center rounded-full mr-3">E</span>
-                  Transparency
+               <div className="flex items-center h-full bg-[#0097CE] text-white px-4 rounded-[16px] font-medium shadow">
+                  <span className="bg-white text-[#0097CE] font-bold w-10 h-10 flex items-center justify-center rounded-full mr-3">A</span>
+                  Accountability
                 </div>
               </motion.div>
 
@@ -104,7 +105,7 @@ export default function MissionVisionValues() {
                 variants={{ visible: { opacity: 1, y: 0, transition: { delay: 0.5 } } }}
               >
                 <div className="flex items-center h-full bg-[#0097CE] text-white px-4 rounded-[16px] font-medium shadow">
-                  <span className="bg-white text-[#0097CE] font-bold w-10 h-10 flex items-center justify-center rounded-full mr-3">A</span>
+                  <span className="bg-white text-[#0097CE] font-bold w-10 h-10 flex items-center justify-center rounded-full mr-3">T</span>
                   Team work
                 </div>
               </motion.div>
@@ -129,9 +130,9 @@ export default function MissionVisionValues() {
               {[
                 { initial: 'E', label: 'Excellence' },
                 { initial: 'S', label: 'Sustainability' },
+                { initial: 'T', label: 'Transparency' },
                 { initial: 'A', label: 'Accountability' },
-                { initial: 'E', label: 'Transparency' },
-                { initial: 'A', label: 'Team work' },
+                { initial: 'T', label: 'Team work' },
                 { initial: 'E', label: 'Excellence in Service' },
               ].map((value, i) => (
                 <motion.div

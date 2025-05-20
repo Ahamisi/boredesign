@@ -22,8 +22,8 @@ export default function AboutUsPage() {
     <div className="bg-white min-h-screen">
       <Header isLightMode={true} />
 
-      <main className="max-w-6xl lg:max-w-7xl mx-auto py-24 mt-24">
-        <div className="mb-2 text-sm text-gray-500 font-semibold tracking-widest">ABOUT US</div>
+      <main className="max-w-6xl lg:max-w-7xl mx-auto py-24 mt-24 px-4 md:px-0">
+        <div className=" mb-2 text-sm text-gray-500 font-semibold tracking-widest">ABOUT US</div>
         <h1 className="text-4xl font-bold mb-4 text-gray-900">Who We Are?</h1>
         <p className="mb-8 max-w-3xl text-gray-700">
           BO Properties is a forward-thinking real estate company committed to transforming the landscape of property investment and development across Nigeria. With a core focus on delivering premium accommodation solutions and lucrative investment opportunities, we pride ourselves on crafting spaces that seamlessly combine luxury, convenience, and sustainability.

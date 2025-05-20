@@ -146,8 +146,8 @@ const Header: React.FC<HeaderProps> = ({ isLightMode = false }) => {
             <Image 
               src={shouldUseLightMode ? "/logo-bo-properties-color.svg" : "/logo-bo-properties.svg"}
               alt="BO PROPERTIES"
-              width={70}
-              height={25}
+              width={80}
+              height={30}
               priority
             />
           </div>
