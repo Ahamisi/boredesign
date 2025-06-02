@@ -6,16 +6,6 @@ import RealtorAcademySection from '../components/RealtorAcademy';
 import MissionVisionValues from '../components/MissionVisionValues';
 import TeamSection from '../components/TeamSection';
 import TestimonialsSection from '../components/TestimonialsSection';
-export const metadata = {
-  title: 'About Us | BO Properties',
-  description: 'Learn about BO Properties, a leading real estate company in Nigeria, delivering premium accommodation and investment opportunities.',
-  openGraph: {
-    title: 'About Us | BO Properties',
-    description: 'Learn about BO Properties, a leading real estate company in Nigeria, delivering premium accommodation and investment opportunities.',
-    images: ['/logo-bo-properties.svg'],
-    type: 'website',
-  },
-};
 
 export default function AboutUsPage() {
   return (

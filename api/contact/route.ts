@@ -18,7 +18,7 @@ export async function POST(request: Request) {
     
     // Send email using Postmark
     await client.sendEmail({
-      From: process.env.FROM_EMAIL || 'contact@boproperties.com',
+      From: process.env.FROM_EMAIL || 'contact@bopropertiesng.com',
       To: 'sales@bopropertiesng.com',
       Subject: `New Contact Form Submission: ${data.inquiry || 'General Inquiry'}`,
       HtmlBody: `

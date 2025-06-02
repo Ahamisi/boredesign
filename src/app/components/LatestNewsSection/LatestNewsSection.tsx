@@ -9,9 +9,10 @@ interface BlogPost {
   slug: string;
   title: string;
   mainImage: string;
+  publishedAt: string;
 }
 
-// Make this a server component
+// Add revalidation and better error handling
 async function getLatestPosts() {
   const query = groq`
     *[_type == "post" && defined(slug.current)] | order(publishedAt desc)[0...3] {
@@ -24,7 +25,12 @@ async function getLatestPosts() {
   `;
   
   try {
-    const posts = await client.fetch(query);
+    // Add cache revalidation
+    const posts = await client.fetch(query, {}, {
+      cache: 'no-store', // Always fetch fresh data
+      // Alternative: use revalidate for time-based caching
+      // next: { revalidate: 60 } // Revalidate every 60 seconds
+    });
     return posts;
   } catch (error) {
     console.error("Error fetching blog posts:", error);
@@ -36,7 +42,33 @@ const LatestNewsSection = async () => {
   const blogPosts = await getLatestPosts();
   
   if (!blogPosts || blogPosts.length === 0) {
-    return null;
+    return (
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="flex justify-between items-center mb-8">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+                Latest news
+              </h2>
+              <p className="text-gray-600 mt-2">
+                All the latest news and articles from BO properties
+              </p>
+            </div>
+            <div>
+              <Link 
+                href="/blog" 
+                className="inline-flex items-center px-5 py-2 rounded-full text-primary-blue-300 border border-primary-blue-300 hover:bg-primary-blue-50 transition-colors duration-300 text-sm font-medium"
+              >
+                See all Posts
+              </Link>
+            </div>
+          </div>
+          <div className="text-center py-8">
+            <p className="text-gray-500">No blog posts available at the moment.</p>
+          </div>
+        </div>
+      </section>
+    );
   }
 
   return (

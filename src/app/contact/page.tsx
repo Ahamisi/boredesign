@@ -4,11 +4,6 @@ import ContactForm from '../components/Contact/ContactForm';
 import Footer from '../components/Footer/Footer';
 import ContactInfo from '../components/Contact/ContactInfo';
 
-export const metadata = {
-  title: 'Contact Us | BO Properties',
-  description: 'Get in touch with BO Properties for real estate inquiries, property management services, and more.',
-};
-
 export default function ContactPage() {
   return (
     <>

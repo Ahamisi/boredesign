@@ -43,7 +43,7 @@ export async function POST(request: Request) {
     
     // You can also send an auto-response to the user if you'd like
     await client.sendEmail({
-      From: process.env.FROM_EMAIL || 'contact@boproperties.com',
+      From: process.env.FROM_EMAIL || 'contact@bopropertiesng.com',
       To: data.email,
       Subject: `Thank you for your consultation request, ${data.fullName}`,
       HtmlBody: `

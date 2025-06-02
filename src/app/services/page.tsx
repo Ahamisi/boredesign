@@ -36,11 +36,6 @@ const services = [
   }
 ];
 
-export const metadata = {
-  title: 'Our Services | BO Properties',
-  description: 'Explore the range of real estate services offered by BO Properties including development, sales, consultancy, and facility management.',
-};
-
 export default function ServicesPage() {
   return (
     <>
