@@ -38,8 +38,8 @@ const gilroy = localFont({
 });
 
 export const metadata = {
-  title: 'BO Properties - Premier Real Estate Investment, Shortlets & Student Hostels in Lagos Nigeria',
-  description: 'BO Properties offers premium real estate investment opportunities, luxury shortlets, student hostels, and property development services in Lagos, Nigeria. Discover Project Rio, Estellar, Primero, and Queens Court properties.',
+  title: 'BO Properties - Real Estate Investment, Shortlets & Hostels in Lagos',
+  description: 'BO Properties offers premium real estate investment opportunities, luxury shortlets, student hostels, and property development services in Lagos, Nigeria.',
   keywords: 'real estate investment Lagos, shortlets Nigeria, student hostels Lagos, property development Nigeria, Project Rio Lagos, Estellar Akoka, Primero Bariga, Queens Court hostel, real estate consultancy Nigeria, property management Lagos, luxury apartments Lagos, investment properties Nigeria, Yaba properties, Ikeja real estate, Akoka student accommodation',
   openGraph: {
     title: 'BO Properties - Premier Real Estate Investment & Shortlets in Lagos Nigeria',
