@@ -31,33 +31,36 @@ const projectsData = {
     plans: [
       {
         id: 'studio',
-        icon: '/icons/house-key.svg',
+        icon: '/icons/house.svg',
+        iconColor: 'text-primary-blue-300',
         type: 'Studio Unit (17SQM)',
         size: '17sqm',
         price: '₦70,000,000',
         initialDeposit: '₦20,000,000',
         paymentDuration: '15months',
-        features: ['Open plan layout', 'Fitted kitchen', 'Modern bathroom']
+        features: [{ text: 'Open plan layout' }, { text: 'Fitted kitchen' }, { text: 'Modern bathroom' }]
       },
       {
         id: 'one-bed',
-        icon: '/icons/house-key.svg',
+        icon: '/icons/house.svg',
+        iconColor: 'text-purple-600',
         type: 'One bedroom (33SQM)',
         size: '33 sqm',
         price: '₦99,000,000',
         initialDeposit: '₦30,000,000',
         paymentDuration: '15months',
-        features: ['Spacious bedroom', 'Fitted kitchen', 'Modern bathroom', 'Living area']
+        features: [{ text: 'Spacious bedroom' }, { text: 'Fitted kitchen' }, { text: 'Modern bathroom' }, { text: 'Living area' }]
       },
       {
         id: 'two-bed',
-        icon: '/icons/house-key.svg',
+        icon: '/icons/house.svg',
+        iconColor: 'text-blue-800',
         type: 'Two bedroom (33SQM)',
         size: '33 sqm',
         price: '₦205,000,000',
         initialDeposit: '₦50,000,000',
         paymentDuration: '15months',
-        features: ['2 bedrooms', 'Fitted kitchen', 'Modern bathroom', 'Living & dining area']
+        features: [{ text: '2 bedrooms' }, { text: 'Fitted kitchen' }, { text: 'Modern bathroom' }, { text: 'Living & dining area' }]
       }
     ]
   },
