@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Header from '../components/Header';
 import NewsletterSection from '../components/NewsletterSection';
 import { client } from '@/sanity/lib/client';
+import { urlFor, urlForThumbnail } from '@/sanity/lib/image';
 import { groq } from 'next-sanity';
 
 // SEO metadata for the blog listing page
@@ -62,10 +63,9 @@ export default async function BlogPage({
       slug,
       excerpt,
       "author": author->name,
-      "authorImage": author->image.asset->url,
+      "authorImage": author->image,
       "categories": categories[]->title,
-      "mainImage": mainImage.asset->url,
-      "mainImageAlt": mainImage.alt,
+      mainImage,
       publishedAt,
       readTime
     }
@@ -104,15 +104,16 @@ export default async function BlogPage({
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {posts.map((post: SanityDocument) => (
               <article key={post._id} className="flex flex-col h-full">
-                <Link href={`/blog/${post.slug.current}`} className="block relative aspect-[4/3] w-full rounded-lg overflow-hidden mb-4">
+                <Link href={`/blog/${post.slug?.current || ''}`} className="block relative aspect-[4/3] w-full rounded-lg overflow-hidden mb-4">
                   <Image 
-                    src={post.mainImage || '/placeholder-image.jpg'} 
-                    alt={post.mainImageAlt || post.title} 
+                    src={post.mainImage ? urlForThumbnail(post.mainImage, 350, 262) : '/placeholder-image.jpg'} 
+                    alt={post.mainImage?.alt || post.title || ''} 
                     fill 
                     className="object-cover transition-transform duration-500 hover:scale-105"
+                    sizes="(max-width: 640px) 95vw, (max-width: 1024px) 45vw, 350px"
                   />
                 </Link>
-                <Link href={`/blog/${post.slug.current}`} className="block group">
+                <Link href={`/blog/${post.slug?.current || ''}`} className="block group">
                   <h3 className="text-lg font-bold text-gray-800 group-hover:text-primary-blue-300 transition-colors duration-300">
                     {post.title}
                   </h3>

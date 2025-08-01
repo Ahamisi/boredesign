@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Header from '../../components/Header'
 import { PortableText } from '@portabletext/react'
 import { client } from '@/sanity/lib/client'
+import { urlFor, urlForFeatured, urlForAvatar, urlForThumbnail, urlForOptimized, urlForFullSize } from '@/sanity/lib/image'
 import { groq } from 'next-sanity'
 import NewsletterSection from '../../components/NewsletterSection'
 import type { Metadata as NextMetadata } from 'next'
@@ -30,24 +31,46 @@ type SanityDocument = {
   [key: string]: any;
 };
 
+// Clickable image component for PortableText
+const ClickableImage = ({ value }: any) => {
+  // Optimized for actual container width: ~800px on desktop, full width on mobile
+  const optimizedSrc = urlForOptimized(value, { width: 900, height: 500, quality: 80 })
+  const fullSizeSrc = urlForFullSize(value, 2400)
+  
+  return (
+    <div className="relative w-full my-8">
+      <a 
+        href={fullSizeSrc} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="block relative aspect-[9/5] w-full rounded-lg overflow-hidden hover:opacity-95 transition-opacity cursor-zoom-in"
+        title="Click to view full size image"
+      >
+        <Image
+          src={optimizedSrc}
+          alt={value.alt || ''}
+          fill
+          className="object-cover rounded-lg"
+          sizes="(max-width: 640px) 95vw, (max-width: 1024px) 85vw, 900px"
+        />
+        {/* Zoom indicator */}
+        <div className="absolute top-4 right-4 bg-black bg-opacity-50 text-white p-2 rounded-full opacity-0 hover:opacity-100 transition-opacity">
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+          </svg>
+        </div>
+      </a>
+      {value.caption && (
+        <p className="text-center text-gray-500 mt-2 text-sm italic">{value.caption}</p>
+      )}
+    </div>
+  )
+}
+
 // Create the portableTextComponents for the blog content
 const portableTextComponents = {
   types: {
-    image: ({ value }: any) => {
-      return (
-        <div className="relative w-full h-96 my-8">
-          <Image
-            src={value.asset.url}
-            alt={value.alt || ''}
-            fill
-            className="object-cover rounded-lg"
-          />
-          {value.caption && (
-            <p className="text-center text-gray-500 mt-2">{value.caption}</p>
-          )}
-        </div>
-      )
-    }
+    image: ClickableImage
   },
   block: {
     h2: ({children}: any) => <h2 className="text-3xl font-bold text-gray-800 mt-10 mb-6">{children}</h2>,
@@ -108,9 +131,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       type: 'article',
       publishedTime: post.publishedAt,
       authors: [post.author],
-      images: post.mainImage?.asset?.url ? [
+      images: post.mainImage ? [
         {
-          url: post.mainImage.asset.url,
+          url: urlForOptimized(post.mainImage, { width: 1200, height: 630, quality: 90 }),
           width: 1200,
           height: 630,
           alt: post.mainImage.alt || post.title,
@@ -121,7 +144,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       card: 'summary_large_image',
       title: post.seo?.metaTitle || post.title,
       description: post.seo?.metaDescription || post.excerpt,
-      images: post.mainImage?.asset?.url ? [post.mainImage.asset.url] : [],
+      images: post.mainImage ? [urlForOptimized(post.mainImage, { width: 1200, height: 630, quality: 90 })] : [],
     },
   }
 }
@@ -154,11 +177,10 @@ export default async function BlogPostPage({
       excerpt,
       "author": author->{
         name,
-        "image": image.asset->url,
+        image,
         role
       },
-      "mainImage": mainImage.asset->url,
-      "mainImageAlt": mainImage.alt,
+      mainImage,
       publishedAt,
       readTime,
       "categories": categories[]->title,
@@ -166,7 +188,7 @@ export default async function BlogPostPage({
         _id,
         title,
         "slug": slug.current,
-        "mainImage": mainImage.asset->url,
+        mainImage,
         publishedAt
       }
     }
@@ -233,7 +255,7 @@ export default async function BlogPostPage({
               <div className="flex items-center space-x-4 mb-8">
                 {post.author.image ? (
                   <Image 
-                    src={post.author.image} 
+                    src={urlForAvatar(post.author.image, 48)} 
                     alt={post.author.name} 
                     width={48} 
                     height={48} 
@@ -257,13 +279,38 @@ export default async function BlogPostPage({
             
             {/* Featured image */}
             <div className="relative aspect-[16/9] w-full mb-10">
-              <Image 
-                src={post.mainImage || '/placeholder-image.jpg'} 
-                alt={post.mainImageAlt || post.title} 
-                fill 
-                className="object-cover rounded-lg"
-                priority
-              />
+              {post.mainImage ? (
+                <a 
+                  href={urlForFullSize(post.mainImage, 2400)} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block relative w-full h-full rounded-lg overflow-hidden hover:opacity-95 transition-opacity cursor-zoom-in"
+                  title="Click to view full size image"
+                >
+                  <Image 
+                    src={urlForFeatured(post.mainImage, 1000, 562)} 
+                    alt={post.mainImage?.alt || post.title} 
+                    fill 
+                    className="object-cover rounded-lg"
+                    priority
+                    sizes="(max-width: 640px) 95vw, (max-width: 1024px) 90vw, 1000px"
+                  />
+                  {/* Zoom indicator */}
+                  <div className="absolute top-4 right-4 bg-black bg-opacity-50 text-white p-2 rounded-full opacity-0 hover:opacity-100 transition-opacity">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                    </svg>
+                  </div>
+                </a>
+              ) : (
+                <Image 
+                  src="/placeholder-image.jpg"
+                  alt={post.title} 
+                  fill 
+                  className="object-cover rounded-lg"
+                  priority
+                />
+              )}
             </div>
             
             {/* Article content */}
@@ -322,7 +369,7 @@ export default async function BlogPostPage({
                     >
                       <div className="relative w-24 h-24 flex-shrink-0">
                         <Image 
-                          src={relatedPost.mainImage} 
+                          src={relatedPost.mainImage ? urlForThumbnail(relatedPost.mainImage, 96, 96) : '/placeholder-image.jpg'} 
                           alt={relatedPost.title} 
                           fill 
                           className="object-cover rounded-md"

@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
         pathname: '/images/**',
       },
     ],
+    formats: ['image/webp', 'image/avif'],
+    minimumCacheTTL: 60,
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   // Disable TypeScript checks during build
   typescript: {
