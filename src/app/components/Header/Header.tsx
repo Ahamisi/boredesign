@@ -171,7 +171,7 @@ const Header: React.FC<HeaderProps> = ({ isLightMode = false }) => {
         <DropdownMenu 
           title="Projects" 
           items={projectsItems} 
-          href="/projects" 
+          href="#" 
           isLightMode={shouldUseLightMode}
         />
         <Link 
