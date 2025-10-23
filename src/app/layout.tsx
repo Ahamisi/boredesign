@@ -148,6 +148,11 @@ export default function RootLayout({
             ]
           })
         }} />
+        
+        {/* Mailchimp Popup Script */}
+        <script id="mcjs" dangerouslySetInnerHTML={{
+          __html: `!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/924a1b62e8520d0fa960cca10/59e17c3700b4abb7d680ae6d3.js");`
+        }} />
       </head>
       <body className={`${gilroy.variable} antialiased`}>
         {children}
