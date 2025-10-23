@@ -1,11 +1,27 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  
+  // Load Mailchimp script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.id = 'mcjs';
+    script.innerHTML = `!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/924a1b62e8520d0fa960cca10/59e17c3700b4abb7d680ae6d3.js");`;
+    document.head.appendChild(script);
+    
+    // Cleanup on unmount
+    return () => {
+      const existingScript = document.getElementById('mcjs');
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
+  }, []);
   
   return (
     <footer className="bg-primary-blue-400 text-white">
