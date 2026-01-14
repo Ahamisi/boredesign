@@ -12,8 +12,9 @@ const nextConfig: NextConfig = {
     formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 60,
     dangerouslyAllowSVG: true,
-    contentDispositionType: 'attachment',
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    // Remove restrictive CSP that blocks local images
+    // contentDispositionType: 'attachment',
+    // contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   // Disable TypeScript checks during build
   typescript: {
