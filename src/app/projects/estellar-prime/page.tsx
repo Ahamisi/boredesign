@@ -123,7 +123,7 @@ const ProjectRioPage: React.FC = () => {
       {
         id: 'primero',
         title: 'Primero, Ilaje Bariga',
-        slug: 'primero-ilaje-bariga',
+        slug: 'primero',
         location: 'Ilaje, Bariga',
         description: 'Featuring highly-rated shortlets, Primero redefines hospitality and rental opportunities.',
         image: '/projects/project-primero-bo-properties.jpg',

@@ -23,6 +23,7 @@ const ProjectRioPage: React.FC = () => {
     name: 'Queens Court',
     location: 'Akoka, Yaba',
     status: 'Completed',
+    price: '₦150,000,000',
     shortDescription: 'Crafted for comfort and class; offers students an elevated living experience',
     // description: "Estellar Prime is a stunning masterpiece of modern architecture, crafted to offer an exceptional blend of comfort, luxury, and elegance. Designed with the investor in mind, it provides flexibility to suit varying budgets and investment appetites. With a 22-year long lease offering returns of up to ₦80 million, Estellar Prime is an opportunity that redefines the concept of investment and living.",
     sliderImages: [
@@ -38,7 +39,7 @@ const ProjectRioPage: React.FC = () => {
       {
         id: 'primero',
         title: 'Primero, Ilaje Bariga',
-        slug: 'primero-ilaje-bariga',
+        slug: 'primero',
         location: 'Ilaje, Bariga',
         description: 'Featuring highly-rated shortlets, Primero redefines hospitality and rental opportunities.',
         image: '/projects/project-primero-bo-properties.jpg',
@@ -145,27 +146,26 @@ const ProjectRioPage: React.FC = () => {
               <div>
                 <AboutSection 
                   projectName="Queens Court"
-                  title="About Project Rio"
-                  description='Estellar Prime is a stunning masterpiece of modern architecture, crafted to offer an exceptional blend of comfort, luxury, and elegance. Designed with the investor in mind, it provides flexibility to suit varying budgets and investment appetites. With a 22-year long lease offering returns of up to ₦80 million, Estellar Prime is an opportunity that redefines the concept of investment and living.'
+                  title="About Queens Court"
+                  description="Queens Court is a beautifully maintained and fully furnished female hostel located in Abule Oja, Yaba. It is designed to give you comfort, security, and convenience; all in one space. Suitable for students or young professionals looking for a peaceful and well-organized home"
                 />
                 
                 <KeyFeatures 
                   features={[
-                    { icon: '/icons/interior.svg', text: 'Fully furnitured interiors' },
-                    { icon: '/icons/pop.svg', text: 'Elegant POP ceilings' },
+                    { icon: '/icons/interior.svg', text: 'Comfortable Bed' },
+                    { icon: '/icons/pop.svg', text: 'Built in Wardrobe' },
                     { icon: '/icons/tiling.svg', text: 'Stylish full tiling' },
-                    { icon: '/icons/cctv.svg', text: '24/7 security' },
+                    { icon: '/icons/cctv.svg', text: 'Reliable Security' },
                     { icon: '/icons/generator.svg', text: 'Central power generator for uninterrupted electricity' },
-                    { icon: '/icons/electric-meters.svg', text: 'Personalized electricity meters' },
+                    { icon: '/icons/electric-meters.svg', text: 'Prepaid meter for transparent electricity use' },
                     { icon: '/icons/cctv.svg', text: 'Advanced CCTV surveillance for security' },
-                    { icon: '/icons/kitchen.svg', text: 'Modern kitchen cabinets' },
-                    { icon: '/icons/parking.svg', text: 'Ample parking space' },
-                    { icon: '/icons/property-management.svg', text: 'Comprehensive property management options' },
+                    { icon: '/icons/kitchen.svg', text: 'Air conditioner in every room' },
+                    { icon: '/icons/property-management.svg', text: 'Fully furnished rooms with clean, organized layouts' },
                     { icon: '/icons/smart-home.svg', text: 'Alexa-powered home automation' },
                     { icon: '/icons/inverter.svg', text: 'Private inverter for personalized power backup' },
-                    { icon: '/icons/water-heater.svg', text: 'Water heater for ultimate convenience' },
+                    { icon: '/icons/water-heater.svg', text: 'Constant water supply' },
                   ]}
-                  conclusionText="Estellar Prime is more than just a residence—it's a lifestyle statement. With its state-of-the-art furnishings, innovative features, and the comfort of a luxury retreat, it sets a new standard for contemporary living and investment."
+                  conclusionText="This modern hostel features 3-man rooms and 4-man rooms, all thoughtfully arranged to give you the right balance of privacy and community living. Every room is fully set up, so you walk in and immediately feel at home."
                 />
                 
               </div>

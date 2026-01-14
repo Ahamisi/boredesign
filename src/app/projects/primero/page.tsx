@@ -14,17 +14,17 @@ import KeyFeatures from '@/app/components/ProjectDetail/KeyFeatures';
 import ProjectActions from '@/app/components/ProjectDetail/ProjectActions';
 
 // We'll implement a simple slider first to match what's shown in the image
-const ProjectRioPage: React.FC = () => {
+const PrimeroPage: React.FC = () => {
   const featuresSectionRef = useRef(null);
   const isInViewFeatures = useInView(featuresSectionRef, { once: true, amount: 0.2 });
 
   // Project data
-  const rioProject = {
+  const primeroProject = {
     name: 'Primero',
     location: 'Bariga, Lagos',
     status: 'Completed',
-    shortDescription: 'Project Rio, at the heart of Ikeja, is a masterpiece of modern architecture designed to elevate the living experience.',
-    description: "Project Rio, at the heart of Ikeja, is a masterpiece of modern architecture designed to elevate the living experience. Thoughtfully crafted to suit diverse lifestyles, this exceptional property combines style, functionality, and innovation, making it the ideal choice for contemporary living.",
+    shortDescription: 'Featuring highly-rated shortlets, Primero redefines hospitality and rental opportunities in Ilaje, Bariga.',
+    description: "Primero, located in Ilaje, Bariga, Lagos, is a premium short-term rental property featuring highly-rated shortlets that redefine hospitality and rental opportunities. Thoughtfully crafted to suit diverse lifestyles, this exceptional property combines style, functionality, and innovation, making it the ideal choice for contemporary living and investment.",
     sliderImages: [
       { id: '1', src: '/projects/primero/primero-1.jpg', alt: 'Project Primero' },
       { id: '2', src: '/projects/primero/primero-2.png', alt: 'Primero' },
@@ -36,7 +36,7 @@ const ProjectRioPage: React.FC = () => {
       {
         id: 'primero',
         title: 'Primero, Ilaje Bariga',
-        slug: 'primero-ilaje-bariga',
+        slug: 'primero',
         location: 'Ilaje, Bariga',
         description: 'Featuring highly-rated shortlets, Primero redefines hospitality and rental opportunities.',
         image: '/projects/project-primero-bo-properties.jpg',
@@ -46,7 +46,7 @@ const ProjectRioPage: React.FC = () => {
         title: 'Estellar Prime',
         slug: 'estellar-prime',
         location: 'Abule Ijesha, Yaba',
-        description: 'Featuring highly-rated shortlets, Primero redefines hospitality and rental opportunities.',
+        description: 'Estellar Prime offers modern luxury living with flexible investment options and a 22-year lease delivering up to ₦80 million in returns.',
         image: '/projects/estellar-prime/estellar-prime.jpg',
       }
     ],
@@ -63,10 +63,9 @@ const ProjectRioPage: React.FC = () => {
       <main className='mt-25'>
         {/* Hero/Slider Image */}
         <ProjectSlider 
-          images={rioProject.sliderImages}
-          projectName={rioProject.name}
-          hasThreeSixtyView={true}
-          threeSixtyUrl="/projects/project-rio/360"
+          images={primeroProject.sliderImages}
+          projectName={primeroProject.name}
+          hasThreeSixtyView={false}
         />
         
         {/* Project Features */}
@@ -87,7 +86,7 @@ const ProjectRioPage: React.FC = () => {
                   animate={isInViewFeatures ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                   transition={{ duration: 0.5 }}
                 >
-                  {rioProject.name}
+                  {primeroProject.name}
                 </motion.h1>
                 
                 <motion.div 
@@ -98,16 +97,16 @@ const ProjectRioPage: React.FC = () => {
                 >
                   <div className="mb-2">
                     <span className="font-medium text-gray-700 mr-2">Location:</span>
-                    <span className="text-gray-600">{rioProject.location}</span>
+                    <span className="text-gray-600">{primeroProject.location}</span>
                   </div>
                   
                   <div className="mb-2">
                     <span className="font-medium text-gray-700 mr-2">Status:</span>
-                    <span className="text-green-600 font-medium">{rioProject.status}</span>
+                    <span className="text-green-600 font-medium">{primeroProject.status}</span>
                   </div>
                   
                   <div className="mt-2">
-                    <p className="text-gray-600">{rioProject.shortDescription}</p>
+                    <p className="text-gray-600">{primeroProject.shortDescription}</p>
                   </div>
                 </motion.div>
                 
@@ -119,8 +118,8 @@ const ProjectRioPage: React.FC = () => {
                 >
 
                 <ProjectActions 
-                    projectName="Estellar Prime" 
-                    propertyType="luxury apartment"
+                    projectName="Primero" 
+                    propertyType="shortlet apartments"
                 />
                   {/* <a 
                     href="#contact" 
@@ -142,7 +141,7 @@ const ProjectRioPage: React.FC = () => {
                 <AboutSection 
                   projectName="Primero"
                   title="About Primero"
-                  description="Project Rio, at the heart of Ikeja, is a masterpiece of modern architecture designed to elevate the living experience. Thoughtfully crafted to suit diverse lifestyles, this exceptional property combines style, functionality, and innovation, making it the ideal choice for contemporary living."
+                  description="Primero, located in Ilaje, Bariga, Lagos, is a premium short-term rental property featuring highly-rated shortlets that redefine hospitality and rental opportunities. Thoughtfully crafted to suit diverse lifestyles, this exceptional property combines style, functionality, and innovation, making it the ideal choice for contemporary living and investment."
                 />
                 
                 <KeyFeatures 
@@ -161,7 +160,7 @@ const ProjectRioPage: React.FC = () => {
                     { icon: '/icons/inverter.svg', text: 'Private inverter for personalized power backup' },
                     { icon: '/icons/water-heater.svg', text: 'Water heater for ultimate convenience' },
                   ]}
-                  conclusionText="Estellar Prime is more than just a residence—it's a lifestyle statement. With its state-of-the-art furnishings, innovative features, and the comfort of a luxury retreat, it sets a new standard for contemporary living and investment."
+                  conclusionText="Primero is more than just a shortlet—it's a lifestyle statement. With its state-of-the-art furnishings, innovative features, and the comfort of a luxury retreat, it sets a new standard for contemporary hospitality and rental investment opportunities."
                 />
                 
               </div>
@@ -170,22 +169,22 @@ const ProjectRioPage: React.FC = () => {
         </motion.section>
         
         {/* Pricing Plans */}
-        {/* <PricingPlans plans={rioProject.plans} /> */}
+        {/* <PricingPlans plans={primeroProject.plans} /> */}
         
 
         
-        {rioProject.galleryImages && rioProject.galleryImages.length > 0 && (
+        {primeroProject.galleryImages && primeroProject.galleryImages.length > 0 && (
           <ProjectGallery 
-            images={rioProject.galleryImages} 
-            title={rioProject.name} 
+            images={primeroProject.galleryImages} 
+            title={primeroProject.name} 
           />
         )}
 
         {/* Related Projects */}
-        <RelatedProjects projects={rioProject.relatedProjects} />
+        <RelatedProjects projects={primeroProject.relatedProjects} />
       </main>
     </div>
   );
 };
 
-export default ProjectRioPage; 
+export default PrimeroPage; 

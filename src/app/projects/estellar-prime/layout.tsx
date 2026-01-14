@@ -2,11 +2,11 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Estellar Prime Abule Ijesha Yaba - Ongoing Premium Development Lagos | BO Properties',
-  description: 'Estellar Prime in Abule Ijesha, Yaba, Lagos is an ongoing premium residential development. Featuring highly-rated shortlets and luxury accommodations, redefining hospitality and rental opportunities in Yaba.',
+  description: 'Estellar Prime offers modern luxury living with flexible investment options and a 22-year lease delivering up to ₦80 million in returns. Premium residential development in Abule Ijesha, Yaba, Lagos.',
   keywords: 'Estellar Prime Lagos, Abule Ijesha Yaba development, ongoing projects Lagos, premium development Yaba, luxury shortlets Yaba, residential development Lagos, BO Properties Estellar Prime, Yaba real estate investment, modern apartments Yaba',
   openGraph: {
     title: 'Estellar Prime Abule Ijesha Yaba - Ongoing Premium Development Lagos',
-    description: 'Ongoing premium development in Abule Ijesha, Yaba. Featuring luxury shortlets and accommodations, redefining hospitality and rental opportunities.',
+    description: 'Estellar Prime offers modern luxury living with flexible investment options and a 22-year lease delivering up to ₦80 million in returns.',
     url: 'https://bopropertiesng.com/projects/estellar-prime',
     siteName: 'BO Properties',
     images: [
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Estellar Prime Yaba - Ongoing Premium Development Lagos',
-    description: 'Ongoing premium development in Abule Ijesha, Yaba. Luxury shortlets and modern accommodations.',
+    description: 'Estellar Prime offers modern luxury living with flexible investment options and a 22-year lease delivering up to ₦80 million in returns.',
     images: ['https://bopropertiesng.com/projects/estellar-prime/estellar-prime.jpg'],
   },
   alternates: {
@@ -45,7 +45,7 @@ export default function EstellarPrimeLayout({
             "@context": "https://schema.org",
             "@type": "RealEstateProject",
             "name": "Estellar Prime",
-            "description": "Ongoing premium residential development in Abule Ijesha, Yaba, Lagos. Featuring luxury shortlets and accommodations, redefining hospitality and rental opportunities.",
+            "description": "Estellar Prime offers modern luxury living with flexible investment options and a 22-year lease delivering up to ₦80 million in returns. Premium residential development in Abule Ijesha, Yaba, Lagos.",
             "url": "https://bopropertiesng.com/projects/estellar-prime",
             "image": "https://bopropertiesng.com/projects/estellar-prime/estellar-prime.jpg",
             "address": {
