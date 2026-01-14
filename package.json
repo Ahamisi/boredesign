@@ -17,7 +17,7 @@
     "@sanity/image-url": "^1.1.0",
     "@sanity/vision": "^3.87.1",
     "framer-motion": "^12.9.2",
-    "next": "15.3.1",
+    "next": "^15.5.9",
     "next-sanity": "^9.10.6",
     "nodemailer": "^7.0.2",
     "postmark": "^4.0.5",
@@ -36,7 +36,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.3.1",
+    "eslint-config-next": "^15.5.9",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
