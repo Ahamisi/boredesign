@@ -10,6 +10,7 @@ interface BlogPost {
   title: string;
   mainImage: string;
   publishedAt: string;
+  [key: string]: any; // Allow additional properties from Sanity
 }
 
 // Add revalidation and better error handling
@@ -25,11 +26,10 @@ async function getLatestPosts() {
   `;
   
   try {
-    // Add cache revalidation
+    // Use ISR (Incremental Static Regeneration) for time-based caching
+    // This allows static generation at build time while refreshing data periodically
     const posts = await client.fetch(query, {}, {
-      cache: 'no-store', // Always fetch fresh data
-      // Alternative: use revalidate for time-based caching
-      // next: { revalidate: 60 } // Revalidate every 60 seconds
+      next: { revalidate: 3600 } // Revalidate every hour (3600 seconds)
     });
     return posts;
   } catch (error) {
@@ -94,7 +94,7 @@ const LatestNewsSection = async () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {blogPosts.map((post) => (
+          {blogPosts.map((post: BlogPost) => (
             <article 
               key={post._id} 
               className="flex flex-col h-full"
