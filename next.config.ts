@@ -12,8 +12,8 @@ const nextConfig: NextConfig = {
     formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 60,
     dangerouslyAllowSVG: true,
-    // Fallback to unoptimized if sharp fails (for Netlify compatibility)
-    unoptimized: process.env.NEXT_IMAGE_UNOPTIMIZED === 'true',
+    // Use unoptimized images on Netlify (bypasses Sharp dependency issues)
+    unoptimized: process.env.NEXT_IMAGE_UNOPTIMIZED === 'true' || process.env.NETLIFY === 'true',
     // Remove restrictive CSP that blocks local images
     // contentDispositionType: 'attachment',
     // contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
