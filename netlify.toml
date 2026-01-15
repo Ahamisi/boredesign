@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build"
+  command = "npm install && npm rebuild sharp --platform=linux --arch=x64 && npm run build"
   publish = ".next"
 
 [[plugins]]
@@ -8,4 +8,11 @@
 [build.environment]
   NODE_VERSION = "20"
   NPM_FLAGS = "--legacy-peer-deps"
+  # Ensure native dependencies are built
+  SKIP_NATIVE_DEPENDENCIES = "false"
+  # Rebuild sharp for Linux platform on Netlify
+  npm_config_platform = "linux"
+  npm_config_arch = "x64"
+  # Fallback to unoptimized images if sharp fails
+  NEXT_IMAGE_UNOPTIMIZED = "false"
 

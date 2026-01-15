@@ -10,7 +10,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "npm rebuild sharp || npm install --platform=linux --arch=x64 sharp || true"
   },
   "dependencies": {
     "@sanity/icons": "^3.7.0",
@@ -25,6 +26,7 @@
     "react-dom": "^19.0.0",
     "react-is": "^19.1.0",
     "sanity": "^3.87.1",
+    "sharp": "^0.34.5",
     "styled-components": "^6.1.17"
   },
   "devDependencies": {
