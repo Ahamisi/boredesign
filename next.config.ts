@@ -12,11 +12,11 @@ const nextConfig: NextConfig = {
     formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 60,
     dangerouslyAllowSVG: true,
-    // Use unoptimized images on Netlify (bypasses Sharp dependency issues)
-    unoptimized: process.env.NEXT_IMAGE_UNOPTIMIZED === 'true' || process.env.NETLIFY === 'true',
-    // Remove restrictive CSP that blocks local images
-    // contentDispositionType: 'attachment',
-    // contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    // Force unoptimized images to bypass Sharp/IPX issues on Netlify
+    // According to Next.js docs: https://nextjs.org/docs/app/api-reference/components/image#unoptimized
+    // GitHub discussion: https://github.com/vercel/next.js/discussions/50028
+    // Setting to true globally ensures images work on Netlify (slight performance trade-off)
+    unoptimized: true,
   },
   // Disable TypeScript checks during build
   typescript: {

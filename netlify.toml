@@ -8,11 +8,8 @@
 [build.environment]
   NODE_VERSION = "20"
   NPM_FLAGS = "--legacy-peer-deps"
-  # Ensure native dependencies are built
-  SKIP_NATIVE_DEPENDENCIES = "false"
-  # Rebuild sharp for Linux platform on Netlify
-  npm_config_platform = "linux"
-  npm_config_arch = "x64"
-  # Use unoptimized images on Netlify (bypasses Sharp issues)
+  # Netlify automatically sets NETLIFY=true, which triggers unoptimized images
+  # This bypasses Sharp/IPX issues per GitHub discussion #50028
+  NETLIFY = "true"
   NEXT_IMAGE_UNOPTIMIZED = "true"
 
