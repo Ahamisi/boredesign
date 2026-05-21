@@ -2,7 +2,9 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Queens Court Student Hostel Akoka - Premium Student Accommodation Lagos | BO Properties',
-  description: 'Queens Court offers premium student accommodation in Akoka, Lagos. Modern hostel facilities near University of Lagos (UNILAG) with security, comfort, and convenience. Crafted for comfort and class, offering students an elevated living experience.',
+  description: `Queens Court is a beautifully maintained and fully furnished female hostel located in Abule Oja, Yaba. It is designed to give you comfort, security, and convenience; all in one space. Suitable for students or young professionals looking for a peaceful and well-organized home.
+
+  This modern hostel features 3-man rooms and 4-man rooms, all thoughtfully arranged to give you the right balance of privacy and community living. Every room is fully set up, so you walk in and immediately feel at home.`,
   keywords: 'Queens Court hostel Lagos, student accommodation Akoka, University of Lagos hostel, UNILAG student housing, student housing Lagos, premium student hostel Nigeria, Akoka student accommodation, university hostel Lagos, student residence Lagos, BO Properties Queens Court',
   openGraph: {
     title: 'Queens Court Student Hostel Akoka - Premium Student Accommodation Lagos',

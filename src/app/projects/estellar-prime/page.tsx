@@ -133,7 +133,7 @@ const ProjectRioPage: React.FC = () => {
         title: 'Estellar Prime',
         slug: 'estellar-prime',
         location: 'Abule Ijesha, Yaba',
-        description: 'Featuring highly-rated shortlets, Primero redefines hospitality and rental opportunities.',
+        description: 'Estellar Prime offers modern luxury living with flexible investment options and a 22-year lease delivering up to ₦80 million in returns.',
         image: '/projects/estellar-prime/estellar-prime.jpg',
       }
     ],

@@ -127,6 +127,13 @@ const ProjectRioPage: React.FC = () => {
                     projectName="Queens Court" 
                     propertyType="luxury apartment"
                 />
+                <ProjectActions 
+                    projectName="Queens Court" 
+                    propertyType="luxury apartment"
+                    rent={true}
+                />
+              
+
                   {/* <a 
                     href="#contact" 
                     className="px-6 py-3 bg-primary-blue-300 text-white rounded-md hover:bg-primary-blue-400 transition-colors text-center"
@@ -149,25 +156,30 @@ const ProjectRioPage: React.FC = () => {
                   title="About Queens Court"
                   description="Queens Court is a beautifully maintained and fully furnished female hostel located in Abule Oja, Yaba. It is designed to give you comfort, security, and convenience; all in one space. Suitable for students or young professionals looking for a peaceful and well-organized home"
                 />
-                
+
+               
+               
                 <KeyFeatures 
                   features={[
                     { icon: '/icons/interior.svg', text: 'Comfortable Bed' },
                     { icon: '/icons/pop.svg', text: 'Built in Wardrobe' },
                     { icon: '/icons/tiling.svg', text: 'Stylish full tiling' },
                     { icon: '/icons/cctv.svg', text: 'Reliable Security' },
-                    { icon: '/icons/generator.svg', text: 'Central power generator for uninterrupted electricity' },
-                    { icon: '/icons/electric-meters.svg', text: 'Prepaid meter for transparent electricity use' },
-                    { icon: '/icons/cctv.svg', text: 'Advanced CCTV surveillance for security' },
-                    { icon: '/icons/kitchen.svg', text: 'Air conditioner in every room' },
-                    { icon: '/icons/property-management.svg', text: 'Fully furnished rooms with clean, organized layouts' },
-                    { icon: '/icons/smart-home.svg', text: 'Alexa-powered home automation' },
-                    { icon: '/icons/inverter.svg', text: 'Private inverter for personalized power backup' },
                     { icon: '/icons/water-heater.svg', text: 'Constant water supply' },
+                    { icon: '/icons/electric-meters.svg', text: 'Prepaid meter for transparent electricity use' },
+                    { icon: '/icons/kitchen.svg', text: 'Air conditioner in every room' },
+                    { icon: '/icons/inverter.svg', text: 'Inverter for power backup' },
+                    { icon: '/icons/property-management.svg', text: 'Fully furnished rooms with clean, organized layouts' },
+                    { icon: '/icons/generator.svg', text: 'Central power generator for uninterrupted electricity' },
+                    { icon: '/icons/cctv.svg', text: 'Advanced CCTV surveillance for security' },
+                    { icon: '/icons/smart-home.svg', text: 'Alexa-powered home automation' },
+                    
+                    
                   ]}
                   conclusionText="This modern hostel features 3-man rooms and 4-man rooms, all thoughtfully arranged to give you the right balance of privacy and community living. Every room is fully set up, so you walk in and immediately feel at home."
                 />
-                
+              
+
               </div>
             </div>
           </div>

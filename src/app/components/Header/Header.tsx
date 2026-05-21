@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { button } from 'framer-motion/client';
 
 // Define dropdown menu items
 interface MenuItem {
@@ -130,10 +131,13 @@ const Header: React.FC<HeaderProps> = ({ isLightMode = false }) => {
     { title: 'Project Rio', href: '/projects/project-rio' },
     { title: 'Primero', href: '/projects/primero' },
     { title: 'Estellar', href: '/projects/estellar' },
+    { title: 'Estellar Luxe', href: '/projects/estellar-luxe'},
     { title: 'Estellar Prime', href: '/projects/estellar-prime' },
+    { title: "Vellora's Court", href: '/projects/velloras-court' },
+    { title: "Becca's Deluuxe", href: '/projects/becca-deluxe'},
     { title: 'Queens Court', href: '/projects/queens-court' }
   ];
-  
+
   return (
     <header className={`fixed top-0 left-0 right-0 flex items-center justify-between px-8 lg:px-24 py-4 z-50 transition-all duration-300 ${
       shouldUseLightMode 
