@@ -16,7 +16,7 @@ const siteAgents = [
     whatsappUrl: 'https://wa.me/2348131996661',
   },
   {
-    name: 'Mariam',
+    name: 'Maryam',
     title: 'Property Consultant',
     photo: '/projects/queens-court/agents/agent-3.jpg',
     whatsappUrl: 'https://wa.me/2347083032287',
