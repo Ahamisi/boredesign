@@ -22,7 +22,7 @@ const ProjectRioPage: React.FC = () => {
   const rioProject = {
     name: 'Project Rio',
     location: 'Ikeja',
-    status: 'Ongoing',
+    status: 'Completed',
     shortDescription: 'Located just 10 minutes from the international airport, Rio promises a premium living and investment experience in the heart of Ikeja.',
     description: 'Project Rio, at the heart of Ikeja, is a masterpiece of modern architecture designed to elevate the living experience. Thoughtfully crafted to suit diverse lifestyles, this exceptional property combines style, functionality, and innovation, making it the ideal choice for contemporary living.',
     sliderImages: [

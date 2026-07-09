@@ -22,7 +22,7 @@ const EstellarLuxePage: React.FC = () => {
   const rioProject = {
     name: 'Estellar Luxe',
     location: 'Yaba',
-    status: 'Ongoing',
+    status: 'Completed',
     shortDescription: 'Perfectly positioned in the heart of Abule Oja, Akoka-Yaba, Estellar Luxe stands tall as the first building in the area to feature an apartment elevator, setting a new standard for luxury and convenience. Suitable if you’re an investor seeking high rental yield or a homeowner desiring a stylish, future-proof residence.',
     description: 'Estellar Luxe, at the heart of Ikeja, is a masterpiece of modern architecture designed to elevate the living experience. Thoughtfully crafted to suit diverse lifestyles, this exceptional property combines style, functionality, and innovation, making it the ideal choice for contemporary living.',
     sliderImages: [

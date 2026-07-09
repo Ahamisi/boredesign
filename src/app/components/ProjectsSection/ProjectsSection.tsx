@@ -123,16 +123,9 @@ const ProjectsSection: React.FC = () => {
       description: "Featuring highly-rated shortlets, Primero redefines hospitality and rental opportunities.",
       slug: "primero"
     },
+  
     {
       id: 2,
-      image: "/projects/queens-court-bo-properties.jpg",
-      title: "Queenscourt Hostel, Akoka",
-      location: "Akoka",
-      description: "Crafted for comfort and class; offers students an elevated living experience",
-      slug: "queens-court"
-    },
-    {
-      id: 3,
       image: "/projects/estellar/estellar-finished-1.jpg",
       title: "Estellar",
       location: "Akoka, Yaba",
@@ -140,22 +133,40 @@ const ProjectsSection: React.FC = () => {
       slug: "estellar"
     },
     {
-      id: 4,
+      id: 3,
       image: "/projects/estellar-prime/estellar-prime.jpg",
       title: "Estellar Prime",
       location: "Abule Ijesha, Yaba",
       description: "Featuring highly-rated shortlets, Primero redefines hospitality and rental opportunities.",
       slug: "estellar-prime",
-      status: "Ongoing"
+      status: "Completed"
     },
     {
-      id: 5,
+      id: 4,
       image: "/projects/project-rio-bo-properties.jpg",
       title: "Project Rio",
       location: "Ikeja",
       description: "Rio promises a premium living and investment experience in the heart of Ikeja.",
-      status: "Ongoing",
+      status: "Completed",
       slug: "project-rio"
+    },
+      {
+      id: 5,
+      image: "/projects/becca's-deluxe/becca's-deluxe-4.jpeg",
+      title: "Becca's-Deluxe",
+      location: "Maryland, Ikeja",
+      description: "Exclusive, limited-edition residential development in Shonibare Estate, Maryland, offering modern living, strong investment potential, and lasting value.",
+      slug: "becca's-deluxe",
+      status: "Ongoing"
+    },
+      {
+      id: 6,
+      image: "/projects/velloras-court/velloras-1.jpeg",
+      title: "Vellora's-Court",
+      location: "Maryland",
+      description: "Modern residential development in Maryland, Lagos, offering elevated urban living, smart features, strong investment potential, and attractive short-let income opportunities.",
+      slug: "Vellora's-Court",
+      status: "Ongoing"
     },
     
   ];

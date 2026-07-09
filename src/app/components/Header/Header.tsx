@@ -135,7 +135,7 @@ const Header: React.FC<HeaderProps> = ({ isLightMode = false }) => {
     { title: 'Estellar Prime', href: '/projects/estellar-prime' },
     { title: "Vellora's Court", href: '/projects/velloras-court' },
     { title: "Becca's Deluuxe", href: '/projects/becca-deluxe'},
-    { title: 'Queens Court', href: '/projects/queens-court' }
+    // { title: 'Queens Court', href: '/projects/queens-court' }
   ];
 
   return (

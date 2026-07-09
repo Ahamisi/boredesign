@@ -26,8 +26,8 @@ const ProjectRioPage: React.FC = () => {
     shortDescription: "Vellora’s Court sits within one of Lagos’ most connected and high-demand residential corridors, in Maryland.",
     description: 'Project Rio, at the heart of Ikeja, is a masterpiece of modern architecture designed to elevate the living experience. Thoughtfully crafted to suit diverse lifestyles, this exceptional property combines style, functionality, and innovation, making it the ideal choice for contemporary living.',
     sliderImages: [
-      { id: '1', src: '/projects/project-rio/project-rio-2.jpg', alt: 'Rio Master Bedroom' },
-      { id: '2', src: '/projects/project-rio/project-rio-3.jpg', alt: 'Rio Master Bedroom' },
+      { id: '1', src: '/projects/velloras-court/velloras-1.jpeg', alt: 'Rio Master Bedroom' },
+      { id: '2', src: '/projects/velloras-court/velloras-2.png', alt: 'Rio Master Bedroom' },
       { id: '3', src: '/projects/project-rio/project-rio-4.jpg', alt: 'Rio Master Bedroom' },
       { id: '4', src: '/projects/project-rio-bo-properties.jpg', alt: 'Project Rio Exterior' },
       { id: '5', src: '/projects/project-rio/project-rio-5.jpg', alt: 'Rio Master Bedroom' },
