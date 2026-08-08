@@ -103,10 +103,10 @@ const ProjectRioPage: React.FC = () => {
     ],
     galleryImages: [
       { id: '1', src: '/projects/project-rio/project-rio-2.jpg', alt: 'Rio Master Bedroom' },
-      { id: '2', src: '/projects/project-rio/project-rio-3.jpg', alt: 'Rio Master Bedroom' },
-      { id: '3', src: '/projects/project-rio/project-rio-4.jpg', alt: 'Rio Master Bedroom' },
-      { id: '4', src: '/projects/project-rio/project-rio-5.jpg', alt: 'Rio Master Bedroom' },
-      { id: '5', src: '/projects/project-rio-bo-properties.jpg', alt: 'Project Rio Exterior' },
+      { id: '2', src: '/projects/project-rio/project-rio-6.jpeg', alt: 'Rio Master Bedroom' },
+      { id: '3', src: '/projects/project-rio/project-rio-7.jpeg', alt: 'Rio Master Bedroom' },
+      { id: '4', src: '/projects/project-rio/project-rio-8.jpeg', alt: 'Rio Master Bedroom' },
+      // { id: '5', src: '/projects/project-rio-bo-properties.jpg', alt: 'Project Rio Exterior' },
 
 
     ]
