@@ -129,6 +129,7 @@ const Header: React.FC<HeaderProps> = ({ isLightMode = false }) => {
   
   const projectsItems = [
     { title: 'Project Rio', href: '/projects/project-rio' },
+    { title: 'Project Evara', href: '/projects/project-evara' },
     { title: 'Primero', href: '/projects/primero' },
     { title: 'Estellar', href: '/projects/estellar' },
     { title: 'Estellar Luxe', href: '/projects/estellar-luxe'},
